@@ -1,0 +1,11 @@
+= User Guide for The Pinball Arcade on Android
+Jared Morgan (jaredmorgs) <jaredleonmorgan@gmail.com>
+v1.0, 2015-02-25
+:toc:
+:imagesdir: images
+:homepage: http://jaredmorgs.github.io/TPA_Android_Users_Guide
+
+include::Settings_Menu.adoc[]
+include::Controller_Settings.adoc[]
+include::Android_Sound_Delay.adoc[]
+include::Google_Play_Services.adoc[]
