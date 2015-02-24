@@ -7,6 +7,7 @@ v1.0, 2015-02-25
 
 include::Introduction.adoc[]
 include::Settings_Menu.adoc[]
+include::Launch_Button.adoc[]
 include::Controller_Settings.adoc[]
 include::Google_Play_Services.adoc[]
 include::Android_Sound_Delay.adoc[]
