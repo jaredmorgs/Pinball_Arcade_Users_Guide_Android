@@ -1,0 +1,30 @@
+[[Android_Sound_Delay]]
+== Why Android Sound Effects Always Lag Behind the Action
+You might have noticed that mechanical effects in all Android tables seem to be running up to a quarter second behind the action on the table.
+
+Additionally, when game soundtrack music loops, there is a noticeable playback gap in the music stream.
+
+=== Why Does This Happen?
+Ryan Routon, the former Android developer for TPA, confirmed back in October 2013 in http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108893&viewfull=1#post108893[this post] that TPA uses a custom made in-house audio mixer--lets call it FarSight Audio Mixer (FAM)--that is a bit "laggy". It mixes everything into a single channel (yep, no Stereo on any table: even those that originally supported it), which is then sent as a stream to the Java side of the app to be submitted in chunks to the OS.
+
+This lagginess was present well before October 2013 but the reasons causing the issue were not revealed until this date. Advances in devices since this date has not seen a performance boost in how the FarSight Audio Mixer operates. Frustratingly, there is no workaround to this issue, unless the mixer is completely rewritten. Lets just say a complete rewrite of the FAM is *highly unlikely* to happen. Ever.
+
+=== Audio Questions Answered
+All information provided by responses from Ryan Routon http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108944&viewfull=1#post108944[here].
+
+[qanda]
+What about the flipper sounds: why aren't they affected?::
+The flippers don't have this problem because these effects are played from a sound pool (using .ogg files directly). Unpack the apk (it's basically another name for a zip archive) and you'll see them towards the top of the tree.
+Why not provide all mechanical sounds through the sound pool?::
+Due to the game framework it would be impossible to provide all sounds in a sound pool. All sounds are included in a big byte chunk for each table. Flippers are universal so those are fine to sound pool.
+What have you tried to fix the issue?::
+Decrease the audio block size: every time I make the block size smaller to pass to the Stream it breaks some devices and you hear blips in between. Bugs me to no end but not sure what to do.
+Why not make the block size tunable by the user?::
+The block size is device dependent, and is queried automatically by the Android OS for the most optimal block size. Anything smaller than optimal and the audio stream just does not work, which would likely result in force closes because the buffer is trying to read bytes that aren't there.
+So what is the underlying issue that is causing the headaches?::
+It is actually the streaming aspect that is causing the delay. Even Google admits that the latency issues have been a long-standing issue on Android. They have been improving since ICS, but are still not really quite right.
+
+=== Summary
+Even with Android 5.0 'Lollipop', and the default move to Android Runtime (ART) the Audio latency issue has not improved in one-an-a-half years.
+
+The writer is now quite dubious whether the stated issues are partly OS/app or entirely the FAM now. For example, the Shield Tablet has a huge amount of processing power and it still suffers from the Audio Latency. This just doesn't add up to me.

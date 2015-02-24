@@ -1,10 +1,8 @@
 == Controller Configuration
 
-This content was originally contributed in http://pinballarcadefans.com/showthread.php/6662-Explained-Controller-Support-Options-for-Android[this thread] on the Pinball Arcade Fans forum.
+This content was originally rolled up into a thread in http://pinballarcadefans.com/showthread.php/6662-Explained-Controller-Support-Options-for-Android[this thread] on the Pinball Arcade Fans forum. The thread rolls-up conversation fragments in http://pinballarcadefans.com/showthread.php/566-Controller-support-for-Android[this thread], to make it easier for folks to work out what controllers work with The Pinball Arcade (TPA) on Android.
 
-This section rolls-up conversation fragments in http://pinballarcadefans.com/showthread.php/566-Controller-support-for-Android[this thread], to make it easier for folks to work out what controllers work with The Pinball Arcade (TPA) on Android.
-
-=== Working Controllers
+=== Supported Controllers
 
 The current set of controllers known to work with TPA Android are:
 
@@ -16,33 +14,35 @@ The current set of controllers known to work with TPA Android are:
 * NVIDIA Shield Tablet WiFi-Direct Controller (with NVidia Shield Tablet)
 
 
-=== Control Schemes
+=== Abbreviations Used in this Section
 
-Abbreviations Used in this Section 
-
-LS:: 
+LS::
 Left Analog Stick
-RS::   
+RS::
 Right Analog Stick
-Mode A/B::  
+L1/R1::
+The top digital shoulder buttons on controllers.
+L2/R2::
+The bottom analog triggers (often analog) on controllers.
+Mode A/B::
 The Moga HID mode. Mode A (used by Moga Pocket and 3rd Party controllers) and Mode B (used by Moga Pro)
-Type A/B::  
+Type A/B::
 TPA controller scheme setting, available within the in-game table menu. Switch between modes to switch the assigned flipper and magnasave shoulder/trigger buttons)
 
-==== Moga Pocket
+=== Moga Pocket
 
 Left Flipper::
 Left Shoulder Button
 Right Flipper::
 Right Shoulder Button
 MagnaSave/Autoplunge button::
-LS Up+Right 
+LS Up+Right
 Launch Ball::
 RS Down
 Analog Tilt::
 LS
 View Lock::
-X 
+X
 Enter Initials::
 Flipper Buttons, and Launch
 

@@ -1,1 +1,67 @@
-== How to Use Google Play Services in TPA
+[[Google_Play_Services]]
+== Google Play Services
+Coinciding with the Season 4 release of Earthshaker, a http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games[long-standing request] (one of many) was finally implemented: Google Play Services support.
+
+The history behind this request being so important was because the game's achievements and high scores were all saved in a local database residing in a protected part of the Android Operating System in `/data/data/com.farsight.AndroidPinball.javaproject/files/saved_data`. This directory could only be accessed by the user if they had unlocked the devices' bootloader and installed a superuser binary (also known as "rooting").
+
+Because some device manufacturers classed rooting a device as a warranty breach, users were not inclined to do this just so they could back up their game achievements and data.
+
+While GPS is fantastic, there are a few gotchas in how FarSight has implemented the feature: gotchas that will cause data loss if you are not aware of them.
+
+=== Achievements in GPS
+Achievements are grouped together in GPS because of a limitation in the number of achievements a game can support. This means that for each group of five Standard and Wizard goals, there is one achievement for each category.
+
+To qualify for the GPS achievement, all goals must be achieved before the GPS Achievement is awarded.
+
+==== Implementation
+Remember that local database? Yep, it is still being used to service the GPS achievements and leaderboard tracking. When the game hooks tell the database that an achievement has been achieved, it adds a flag to the database. When all flags for the Standard achievement group are set, the game triggers GPS to award the associated Achievement.
+
+This continuing use of the `saved_games` local database is the single point of failure for user issues relating to lost data, as you'll discover later in this section.
+
+=== Understanding Saved Games in TPA
+IMPORTANT: If you do not create a Saved Games restore point manually, *all* local achievements (Standard/Wizard Goals, or Local High Scores) will be lost  if you un-install or re-install TPA on the same--or other--device.
+
+Like most users who use games with GPS implemented, Cloud Save is something that happens automatically. The assumption is that if a game has Cloud Save in the app listing, a user is guaranteed that the app is backing up their scores and achievements to the cloud automatically.
+
+And if they want to play the game on another device, or restore to a new device, the achievements earned to date are restored automatically for them.
+
+This is *not* how it works in TPA.
+
+Until this user guide existed, there was no documentation about how Saved Games worked for the general user of TPA. For those folks not pouring over Pinball Arcade Fans Forums to learn how to use the app, users had no idea they had to create a manual restore point using Saved Games.
+
+=== Using Saved Games To Maintain Local Achievements and High Scores
+
+Even if you have earned the GPS "Skilled" or "Wizard" goals online, failing to restore a current Saved Games profile to your device will mean that these goals are not reflected locally.
+
+Consider the following scenario:
+
+* Have one goal remaining in the "Wizard" GPS achievement for a table (4 out of 5 goals complete),
+* Un-install TPA.
+* Have no Saved Game restore point.
+* Installed TPA again.
+
+In this scenario, you would have to start your Wizard Goals again for that table because the local database has no record of the other four goals being achieved. GPS does. TPA does not.
+
+*This is the dangerous aspect of how Saved Games has been implemented: it is unintuitive for the average user.*
+
+==== How to Create a Saved Games Restore Point
+Manually creating a Saved Games Restore point is easy.
+
+.How to Create a Saved Games Restore Point
+
+. Tap the `Google Play` button on the main screen.
+. Tap `Save/Load`
+. Tap `Save New Game`
+
+You now have one restore point that you can use to revert to if something catastrophic happens.
+
+==== Maintaining Your Local Game Progress
+You need to keep manually creating backups using Saved Games in case you need to restore. Depending on how much you play TPA will determine how often you create a backup.
+
+As a general guideline:
+
+* Back up after you achieve a Goal or a High Score in TPA.
+* Back up no less than weekly if you are a regular TPA player.
+* Back up no less that monthly if you are a casual player.
+
+There is no way to schedule a Saved Games backup in the game, so you will need to rely on other systems to remind you. I set a Calendar reminder to back up each month, which is a workaround until a better way of managing this important data-retention activity is implemented.
