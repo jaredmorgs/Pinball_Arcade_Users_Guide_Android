@@ -1,0 +1,37 @@
+== Configure the Launch Button Position To Suit Your Play Style
+
+The launch button on tables such as Star Trek: The Next Generation (ST: TNG) and Attack From Mars (AFM) is positioned by default directly under the in-game Pause menu. This is impractical for most users playing TPA using the touchscreen. 
+
+You can reposition this button to your liking, in increments of 5%. This setting caters for your individual preference of launch button position. 
+
+The addition of button positions was not well advertised at the time it was implemented, and still remains something that a user needs to stumble across. Particularly as the item is off-screen in the Portrait menu, and three scrolls down in the Landscape menu. This was demonstrated beautifully in Episode 48 of _The Pinball Podcast_. The hosts tried to work out why the button was where it was and were totally unaware how to change it based on the in-game pause menu on Android. 
+
+=== Adjusting the Launch Button Position
+
+WARNING: The launch button has priority over all flipper touch zones and tilt touch zones. Be very careful where you place it because if it is placed over any of the touch zones, that touch zone will not work properly.
+
+To work around this issue, ensure that "Show Touch Scheme" is turned on while you are configuring the button position so you can position the launch button where it will not interfere with with a flip or tilt touch zone. 
+
+You may need to experiment with the different options until you find one that works for you. 
+
+. From the main menu, tap a game you own that has a launch button present (AFM, ST:TNG)
+. Tap Table Menu.
+. Tap Options.
+. Use the navigation menu arrows to scroll down all the way to the bottom of the list until you see:
+
+* Touch Scheme
+* Show Touch Scheme
+* Button Position
+
+. Tap "Show Touch Scheme" to display the touch zones for controls. 
++
+IMPORTANT: This is _really_ important. See the warning above.
++
+. Cycle through the Touch Schemes (A to F) until you find a touch scheme that works for your finger size and general play style.
+. Tap "Button Position" until the position of the button suits your playing preference, bearing in mind the WARNING above.
+. Tap Back to the main table menu once you are happy with the settings.
+
+=== Touch Tilting and Button Position
+
+Touch Tilting also has its own set of positions, so if you use touch tilting (rather than accelerometer tilting) you need to take into account button position for both tilt and flip zones.
+
