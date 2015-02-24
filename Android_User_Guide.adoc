@@ -4,3 +4,5 @@ v1.0, 2015-02-25
 :toc:
 :imagesdir: images
 :homepage: http://jaredmorgs.github.io/TPA_Android_Users_Guide
+
+include::Controller_Settings.adoc
