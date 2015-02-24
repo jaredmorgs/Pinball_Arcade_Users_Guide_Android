@@ -14,3 +14,8 @@ If you think something could be improved, please fork the repo and submit a pull
 
 == I Want To Support You
 If this guide has helped you configure your Android device correctly, consider donating through PayPal to jaredleonmorgan {at} gmail {dot} com. I am not employed by FarSight in any way, and volunteer my time to them Beta Testing their software because I am passionate about quality and a solid User Experience (UX).
+
+== How Do I Build The Book
+This book is written in AsciiDoc and processed using the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoctor toolchain]. 
+
+If you are building this file locally using asciidoctor, use `asciidoctor -a linkcss! Android_User_Guide.adoc`
