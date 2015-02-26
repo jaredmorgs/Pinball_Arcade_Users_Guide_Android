@@ -1,6 +1,14 @@
-= Users Guide for The Pinball Arcade on Android
-Jared Morgan (jaredmorgs) <jaredleonmorgan@gmail.com>
-v1.0, 2015-02-25
+---
+layout: default
+title: Users Guide for The Pinball Arcade on Android
+author: Jared Morgan (jaredmorgs)
+email: jaredleonmorgan@gmail.com
+version: 1.0
+updated: 2015-02-25
+documentationExpanded: false
+postsExpanded: false
+---
+
 :toc:
 :imagesdir: images
 :homepage: http://jaredmorgs.github.io/Pinball_Arcade_Users_Guide_Android
