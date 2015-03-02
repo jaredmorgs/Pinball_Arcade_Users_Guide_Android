@@ -19,6 +19,18 @@
     <link rel="stylesheet" href="{{page.root}}css/asciidoctor.css"/>
     <link rel="stylesheet" href="{{page.root}}css/local.css"/>
     <script src="{{page.root}}js/vendor/modernizr.js"></script>
+    <script src="{{page.root}}js/vendor/jquery.js"></script>
+    <script src="{{page.root}}js/foundation.min.js"></script>
+    <script src="{{page.root}}js/toc.js"></script>
+    <script>
+        $(document).foundation();
+        $(document).ready(function() {
+            $('#toc').toc({
+                listType: 'ul',
+                title: '<div id="toctitle">Table of Contents</div>',
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -42,6 +54,7 @@
 
     <!-- Main Content -->
     <div class="large-12 columns" role="content">
+        <div id="toc"></div>
         {{ content }}
     </div>
     <!-- End Main Content -->
@@ -61,19 +74,5 @@
         </div>
     </div>
 </footer>
-
-<script src="{{page.root}}js/vendor/jquery.js"></script>
-<script src="{{page.root}}js/foundation.min.js"></script>
-<script>
-    $(document).foundation();
-</script>
-<script src="{{page.root}}js/vendor/jquery.js"></script>
-<script src="{{page.root}}js/foundation/foundation.js"></script>
-<script>
-    $(document).foundation();
-
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-</script>
 </body>
 </html>
