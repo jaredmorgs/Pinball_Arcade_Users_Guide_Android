@@ -36,11 +36,32 @@ Included only to meet the requirements of the Kickstarter award tiers for this t
 
 ==== Manage Tables
 
-TODO
+This menu is pretty self-explanatory. It lets you do the following:
+
+Update All::
+Update all owned tables for each GA release that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources'). 
+Restore All:: 
+Bulk download all tables linked to your Google Play account used to purchase TPA Table Packs, or Season Passes.
+Delete::
+There isn't a button clearly indicating this, but you can delete individual table files by tapping the button to the left of each table name.
+
+NOTE: The table order in this list is well and truly out of alpha order. It is apparently sorted based on the date the table pack was released. That's why you see all the older tables from Season 1 and Season 2 appearing first. 
+
+===== Managing Tables Outside the Interface
+
+There is another way to manage tables that allows you to do away with the somewhat awkward menu in TPA. All you need is your favourite Android file browser.
+
+The game Downloadable Content (DLC) is stored in the `/sdcard/Android/data/com.farsight.AndroidPinball.javaProject/files/` folder. 
+
+It is arguably easier to navigate to this directory and delete files manually. The method through the UI is fine, but slow. Only use it if you are not comfortable deleting files through the file system.
+
+Unless you have a very fast data connection, I'd strongly recommend you back up your DLC to DropBox, Copy, or even just to a folder on your computer. Just get them off your device. Depending on what Content Delivery Network (CDN) node you connect to, it might take anywhere between 30 minutes to four hours to restore all DLC to your device. Having a local copy synchronised to your device will make restoring faster. Much faster.
 
 ==== Sound
 
-TODO
+There's not a great deal to this menu: On or Off. But it is put into a position in the menu tree that is unintuitive.
+
+Note that this turns off *all* sound effects and music. There are no subtle settings to affect mechanical sounds, music, or sound effects. 
 
 ==== Mip Mapping
 
