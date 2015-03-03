@@ -1,0 +1,78 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{page.title}}</title>
+
+
+    <meta name="description"
+          content="Documentation and reference library for ZURB Foundation. JavaScript, CSS, components, grid and more."/>
+
+    <meta name="author" content="ZURB, inc. ZURB network also includes zurb.com"/>
+    <meta name="copyright" content="ZURB, inc. Copyright (c) 2015"/>
+
+    <link rel="stylesheet" href="{{page.root}}css/foundation.css"/>
+    <link rel="stylesheet" href="{{page.root}}css/coderay.css"/>
+    <link rel="stylesheet" href="{{page.root}}css/asciidoctor.css"/>
+    <link rel="stylesheet" href="{{page.root}}css/local.css"/>
+    <script src="{{page.root}}js/vendor/modernizr.js"></script>
+    <script src="{{page.root}}js/vendor/jquery.js"></script>
+    <script src="{{page.root}}js/foundation.min.js"></script>
+    <script src="{{page.root}}js/toc.js"></script>
+    <script>
+        $(document).foundation();
+        $(document).ready(function() {
+            $('#toc').toc({
+                listType: 'ul',
+                title: '<div id="toctitle">Table of Contents</div>',
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<!-- Nav Bar -->
+
+<div class="row">
+    <div class="large-12 columns">
+        <h1>{{page.title}}</h1>
+        <p><span class="author">{{page.author}} &lt;{{page.email}}&gt; - Version {{page.version}}</span></p>
+    </div>
+    <hr/>
+</div>
+
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
+    <!-- Main Content -->
+    <div class="large-12 columns" role="content">
+        <div id="toc"></div>
+        {{ content }}
+    </div>
+    <!-- End Main Content -->
+
+</div>
+
+<!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+
+<footer>
+    <div id="footer" class="columns bottom-bar">
+        <div class="paragraph">
+            <p>Version {{page.version}}<br/>
+            Last Updated {{page.updated}}</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
