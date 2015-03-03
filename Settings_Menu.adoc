@@ -21,10 +21,10 @@ This menu is pretty self-explanatory. It lets you do the following:
 
 IMPORTANT: Update Owned and Restore All do not run as background processes. You must have TPA open all the time for this process to complete successfully. And if you lock your device and resume, the download will stop.
 
-Update Owned::
+Update All::
 Update all owned tables for each GA release that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources'). 
-Restore All:: 
-Bulk download all tables linked to your Google Play account used to purchase TPA Table Packs, or Season Passes. 
+Download Owned:: 
+Bulk download all owned tables linked to your Google Play account used to purchase TPA Table Packs, or Season Passes. 
 Delete::
 There isn't a button clearly indicating this, but you can delete individual table files by tapping the button to the left of each table name.
 
