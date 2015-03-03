@@ -1,6 +1,7 @@
 # jekyll configuration
 
 title: "Pinball Arcade Users Guide"
+url: "http://jaredmorgs.github.com/Pinball_Arcade_Users_Guide_Android/"
 
 asciidoctor:
   attributes:
@@ -8,4 +9,6 @@ asciidoctor:
     - source-highlighter=coderay
     - icons=font
 
+sitemap:
+  include_posts: "/default.html"
 # end of configuration
