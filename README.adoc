@@ -1,21 +1,29 @@
 = The Pinball Arcade Android Users Guide
 
 == What Is This?
-The Pinball Arcade Android User Guide has been created--somewhat out of frustration--to help Android users of FarSight Studio's The Pinball Arcade (TPA) app.
+The Pinball Arcade Android User Guide has been created to help Android users of FarSight Studio's The Pinball Arcade (TPA) app.
 
 == Why Should I Read This?
 If you are a new user to the game, there are plenty of options you need to configure so your device works the way it should with TPA, but might not know how because the UI is simply not able to explain them in sufficient detail.
 
-== I Want To Help
+== Can I Help Improve the Guide?
 I'd love your help! Please open an issue and tell me what needs improving.
 
-== I Want To Contribute Directly
-If you think something could be improved, please fork the repo and submit a pull request.
+== Can I Contribute Directly?
+Yes! If you think something could be improved, please fork the repo and submit a pull request.
 
-== I Want To Support You
-If this guide has helped you configure your Android device correctly, consider donating through PayPal to jaredleonmorgan {at} gmail {dot} com. I am not employed by FarSight in any way, and volunteer my time to them Beta Testing their software because I am passionate about quality and a solid User Experience (UX).
+== How Can I Recognise Your Efforts?
+I do this because I a passionate about The Pinball Arcade, and I want their users to have a pleasurable and rich experience when using the Android App. If this guide does that for you, then please share it on your favourite social media network, and spread the word.
 
-== How Do I Build The Book
-This book is written in AsciiDoc and processed using the http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoctor toolchain]. 
+Donations through PayPal to jaredleonmorgan {at} gmail {dot} com are greatly appreciated, but are certainly not mandatory. 
 
-If you are building this file locally using asciidoctor, use `asciidoctor -a linkcss! Android_User_Guide.adoc`
+== Personal Disclaimer
+
+I am not employed by FarSight Studios in any way, and volunteer my time to them Beta Testing their software (and writing this guide) because I am passionate about quality and a solid User Experience (UX). 
+
+That, and I *really* love pinball! :D
+
+== How Do I Build The Book?
+This book is written in AsciiDoc and processed using the free and open source http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoctor toolchain]. 
+
+If you are building this file locally using asciidoctor, use `asciidoctor -a linkcss! index.adoc`
