@@ -11,6 +11,78 @@ The menu items that make a difference to graphics or performance are:
 * Detail
 * Textures
 
+=== Important Options Explained
+
+==== Manage Tables
+
+This menu is pretty self-explanatory. It lets you do the following:
+
+IMPORTANT: Update Owned and Restore All do not run as background processes. You must have TPA open all the time for this process to complete successfully. And if you lock your device and resume, the download will stop.
+
+Update Owned::
+Update all owned tables for each GA release that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources'). 
+Restore All:: 
+Bulk download all tables linked to your Google Play account used to purchase TPA Table Packs, or Season Passes. 
+Delete::
+There isn't a button clearly indicating this, but you can delete individual table files by tapping the button to the left of each table name.
+
+NOTE: The table order in this list is well and truly out of alpha order. It is apparently sorted based on the date the table pack was released. That's why you see all the older tables from Season 1 and Season 2 appearing first. 
+
+===== Managing Tables Outside the Interface
+
+There is another way to manage tables that allows you to do away with the somewhat awkward menu in TPA. All you need is your favourite Android file browser.
+
+The game Downloadable Content (DLC) is stored in the `/sdcard/Android/data/com.farsight.AndroidPinball.javaProject/files/` folder. 
+
+It is arguably easier to navigate to this directory and delete files manually. The method through the UI is fine, but slow. Only use it if you are not comfortable deleting files through the file system.
+
+Unless you have a very fast data connection and you live in the United States, I'd *strongly recommend* you back up your DLC to DropBox, Copy, or even just to a folder on your computer. Just get them off your device. Depending on what Content Delivery Network (CDN) node you connect to, it might take anywhere between 30 minutes to four hours to restore all DLC to your device. Having a local copy synchronised to your device will make restoring faster. Much faster.
+
+And use the new table release each month as a reminder to take a DLC back-up. You'll thank yourself later when you need to restore them all.
+
+==== Sound
+
+There's not a great deal to this menu: On or Off. 
+
+Note that this turns off *all* sound effects and music. There are no subtle settings to affect mechanical sounds, music, or sound effects. This is most likely to do with limitations of the Farsight Audio Mixer, described later in this guide.
+
+==== Mip Mapping
+
+By far, this menu screams "Developer Speak" in an app specifically not targeted at Developers. But the fact is even the menu item has been misnamed: it should be _Anisotropic Filtering_.
+
+You'll need to visit http://en.m.wikipedia.org/wiki/Mipmap[Wikipedia] for a concise description, but what this setting basically does is affect performance on devices in the area of "depth of field" and the sharpness of the depth of field.
+
+You would think that turning this setting on would be a good thing. But, you need to turn your thinking around when understanding how this works in TPA on older devices
+
+On::
+Activates the Mip Mapping function, which serves mutiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This requires more GPU processing power, and as you can expect, this add a performance impact for older devices.
+Off::
+Deactivates the Mip Mapping function, which serves the highest resolution mipmap. This is better for devices with limited GPU capabilities. 
+
+So turn it on if you have a next-gen device, but leave it off if you don't.
+
+==== Detail
+
+Detail --or High LOD as most regular TPA Andorid forum users refer to it as-- was implemented http://pinballarcadefans.com/showthread.php/7358-High-lod-model-beta[mid February 2014].
+
+Depending on the device you own, you might not even see this menu. Early on in TPA's life, some Samsung devices with Exynos System on a Chip (SoC) did not have a kernel flag set which caused this menu to be hidden. If you don't see this menu, your device has a GPU that will probably struggle to run TPA in general.
+
+High LOD affects what individual elements you see on the table. If you turn this setting to Standard from High, you will really notice the difference. Elements like screw heads, transparencies, plastics, bulbs, even some playfield elements like the curly wires on Party Zone disappear. All these elements put strain on the GPU to render them, so if your device has a weak GPU this setting will either need to be set to Standard, or may not even be visible to you.
+
+High::
+Get the best possible textures. This is the default for this menu now.
+Normal::
+Less crisp textures, but a performance boost for older devices.
+
+==== Textures
+
+Textures is actually to do with Polygon counts in the models on the Tables. If you set this to the Normal setting, close ups of stand-up targets in _The Machine: Bride of Pinbot_ appear hexagonal. Set it to High, and they are far less hexagonal featuring about twice the polygon count.
+
+High::
+The highest polygon count possible in the table models used in TPA. This is the default for this menu now.
+Normal::
+Hexagonal shaped round targets, and other trade-offs that make some playfield elements appear jaggy at distance, and blocky when zoomed in upon.
+
 === Other Settings Menu Items
 
 The rest of these options really belong in another menu. I've suggested this in http://pinballarcadefans.com/showthread.php/9603-Improve-the-Settings-Menu[this thread] but at the time of writing the issue has not been publicly acknowledged.
@@ -32,43 +104,3 @@ Included only to meet the requirements of the Kickstarter award tiers for this t
 Addams Family Credits::
 Included only to meet the requirements of the Kickstarter award tiers for this table.
 
-=== Important Options Explained
-
-==== Manage Tables
-
-This menu is pretty self-explanatory. It lets you do the following:
-
-Update All::
-Update all owned tables for each GA release that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources'). 
-Restore All:: 
-Bulk download all tables linked to your Google Play account used to purchase TPA Table Packs, or Season Passes.
-Delete::
-There isn't a button clearly indicating this, but you can delete individual table files by tapping the button to the left of each table name.
-
-NOTE: The table order in this list is well and truly out of alpha order. It is apparently sorted based on the date the table pack was released. That's why you see all the older tables from Season 1 and Season 2 appearing first. 
-
-===== Managing Tables Outside the Interface
-
-There is another way to manage tables that allows you to do away with the somewhat awkward menu in TPA. All you need is your favourite Android file browser.
-
-The game Downloadable Content (DLC) is stored in the `/sdcard/Android/data/com.farsight.AndroidPinball.javaProject/files/` folder. 
-
-It is arguably easier to navigate to this directory and delete files manually. The method through the UI is fine, but slow. Only use it if you are not comfortable deleting files through the file system.
-
-Unless you have a very fast data connection, I'd strongly recommend you back up your DLC to DropBox, Copy, or even just to a folder on your computer. Just get them off your device. Depending on what Content Delivery Network (CDN) node you connect to, it might take anywhere between 30 minutes to four hours to restore all DLC to your device. Having a local copy synchronised to your device will make restoring faster. Much faster.
-
-==== Sound
-
-There's not a great deal to this menu: On or Off. But it is put into a position in the menu tree that is unintuitive.
-
-Note that this turns off *all* sound effects and music. There are no subtle settings to affect mechanical sounds, music, or sound effects. 
-
-==== Mip Mapping
-
-TODO
-
-==== Detail
-
-TODO
-
-==== Textures
