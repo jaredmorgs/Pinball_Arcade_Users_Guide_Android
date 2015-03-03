@@ -1,0 +1,89 @@
+<!doctype html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{page.title}}</title>
+
+
+    <meta name="description"
+          content="Android User Guide for FarSight Studio's The Pinball Arcade"/>
+    <meta name="author" 
+            content="Jared Morgan (jaredmorgs)"/>
+    <meta name="copyright" 
+            content="Creative Commons Attribution-ShareAlike 4.0 International License"/>
+
+    <link rel="stylesheet" href="{{page.root}}css/foundation.css"/>
+    <link rel="stylesheet" href="{{page.root}}css/coderay.css"/>
+    <link rel="stylesheet" href="{{page.root}}css/asciidoctor.css"/>
+    <link rel="stylesheet" href="{{page.root}}css/font-awesome.css"/>
+    <link rel="stylesheet" href="{{page.root}}css/local.css"/>
+    <script src="{{page.root}}js/vendor/modernizr.js"></script>
+    <script src="{{page.root}}js/vendor/jquery.js"></script>
+    <script src="{{page.root}}js/foundation.min.js"></script>
+    <script src="{{page.root}}js/toc.js"></script>
+    <script>
+        $(document).foundation();
+        $(document).ready(function() {
+            $('#toc').toc({
+                listType: 'ul',
+                title: '<div id="toctitle">Table of Contents</div>',
+            });
+        });
+    </script>
+</head>
+<body>
+
+
+<!-- Nav Bar -->
+
+<div class="row">
+    <div class="large-12 columns">
+        <h1>{{page.title}}</h1>
+        <p><span class="author">Written with passion by {{page.author}} at &lt;{{page.email}}&gt;</span></p>
+        <p><span class="version">Version {{page.version}}</span></p>
+    </div>
+    <div class="large-12 columns"
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+            </a>
+            <br />
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">Users Guide for The Pinball Arcade on Android</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://jaredmorgs.github.io/Pinball_Arcade_Users_Guide_Android" property="cc:attributionName" rel="cc:attributionURL">Jared Morgan</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            <br />
+        </div>
+    <hr/>
+</div>
+
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+
+    <!-- Main Content -->
+    <div class="large-12 columns" role="content">
+        <div id="toc"></div>
+        {{ content }}
+    </div>
+    <!-- End Main Content -->
+
+</div>
+
+<!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+
+<footer>
+    <div id="footer" class="columns bottom-bar">
+        <div class="paragraph">
+            <p>Version {{page.version}}<br/>
+            Last Updated {{page.updated}}</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
