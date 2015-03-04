@@ -1,5 +1,8 @@
 [[Settings_Menu]]
 == The Settings Menu Explained
+
+:toc:
+
 Because of User Interface limitations, the Settings menu is a bit of a mess. There are some options that use Developer speak and would be meaningless to many users, yet are very important for configuring optimum performance in Android for older devices. Some menu items don't even display depending on your device kernel flags (say what, now). 
 
 Read on to learn more about these issues, and how to work around them.
