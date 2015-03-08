@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default 
 title: Users Guide for The Pinball Arcade on Android
 author: Jared Morgan (jaredmorgs)
 email: jaredleonmorgan@gmail.com
