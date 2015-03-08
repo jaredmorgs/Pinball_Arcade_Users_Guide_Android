@@ -1,14 +1,14 @@
 # jekyll configuration
 
-title: "Pinball Arcade Users Guide"
-url: "http://jaredmorgs.github.com/Pinball_Arcade_Users_Guide_Android/"
+title: "Pinball Arcade Users Guide for Android"
+url: "http://jaredmorgs.github.io/Pinball_Arcade_Users_Guide_Android/"
 
 asciidoctor:
   attributes:
     - idseparator=_
     - source-highlighter=coderay
-    - icons=font
+    - icons=font-awesome
 
 sitemap:
-  include_posts: "/default.html"
+  include_posts: "/default.html, /docs"
 # end of configuration
