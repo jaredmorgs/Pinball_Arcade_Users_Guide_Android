@@ -79,13 +79,10 @@
 <p>I&#8217;m trying to solve some of these issues by writing this user guide. The guide contains information about features in TPA that can&#8217;t be adequately explained in-game because of a combination of UI limitations and the complexity of the feature.</p>
 </div>
 <div class="paragraph">
-<p>This guide is not a tool created to disrespect FarSight and their product. Quite the opposite: it is a factual (sometimes raw) testimonial from a customer who happens to be a volunteer beta tester and Technical Writer.  A lot of things in this guide can be figured out by playing around with the UI: some users will be comfortable with this and some won&#8217;t. There are some things that really aren&#8217;t intuitive, and some things that if you assume you know how they work, you may be unpleasantly surprised down the track.</p>
+<p>This guide is not a tool created to disrespect FarSight and their product. Quite the opposite: it is a factual testimonial from a customer (who happens to be a volunteer beta tester and Technical Writer) who feels it&#8217;s necessary to create a user guide for a game that really shouldn&#8217;t need one. A lot of things in this guide can be figured out by playing around with the UI. But there are some things that really aren&#8217;t intuitive, and some things that if you assume you know how they work, you may be unpleasantly surprised down the track.</p>
 </div>
 <div class="paragraph">
 <p>I hope that if you are a new user to TPA Android, this guide helps you get the most out of the app. I hope that if someone at FarSight reads this, they understand the intent and take urgent action to address the workarounds and caveats I&#8217;ve documented in here.</p>
-</div>
-<div class="paragraph">
-<p>So get reading, then get flipping!</p>
 </div>
 </div>
 </div>
@@ -124,7 +121,9 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="manage_tables">Manage Tables</h3>
+<h3 id="important_options_explained">Important Options Explained</h3>
+<div class="sect3">
+<h4 id="manage_tables">Manage Tables</h4>
 <div class="paragraph">
 <p>This menu is pretty self-explanatory. It lets you do the following:</p>
 </div>
@@ -168,8 +167,8 @@ The table order in this list is well and truly out of alpha order. It is apparen
 </tr>
 </table>
 </div>
-<div class="sect3">
-<h4 id="managing_tables_outside_the_interface">Managing Tables Outside the Interface</h4>
+<div class="sect4">
+<h5 id="managing_tables_outside_the_interface">Managing Tables Outside the Interface</h5>
 <div class="paragraph">
 <p>There is another way to manage tables that allows you to do away with the somewhat awkward menu in TPA. All you need is your favourite Android file browser.</p>
 </div>
@@ -180,13 +179,14 @@ The table order in this list is well and truly out of alpha order. It is apparen
 <p>It is arguably easier to navigate to this directory and delete files manually. The method through the UI is fine, but slow. Only use it if you are not comfortable deleting files through the file system.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="back_up_your_dlc">Back Up Your DLC</h4>
+<div class="sect4">
+<h5 id="back_up_your_dlc">Back Up Your DLC</h5>
 <div class="paragraph">
 <p>Unless you have a very fast data connection and you live in the United States, I&#8217;d <strong>strongly recommend</strong> you back up your DLC to DropBox, Copy, or even just to a folder on your computer. Just get them off your device. Depending on what Content Delivery Network (CDN) node you connect to, it might take anywhere between 30 minutes to four hours to restore all DLC to your device. Having a local copy synchronised to your device will make restoring faster. Much faster.</p>
 </div>
 <div class="paragraph">
 <p>And use the new table release each month as a reminder to take a DLC back-up. You&#8217;ll thank yourself later when you need to restore them all.</p>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -207,22 +207,22 @@ The table order in this list is well and truly out of alpha order. It is apparen
 <p>You&#8217;ll need to visit <a href="http://en.m.wikipedia.org/wiki/Mipmap">Wikipedia</a> for a concise description, but what this setting basically does is affect performance on devices in the area of "depth of field" and the sharpness of the depth of field.</p>
 </div>
 <div class="paragraph">
-<p>You would think that turning this setting on would be a good thing. But, you need to turn your thinking around when understanding how this works in TPA.</p>
+<p>You would think that turning this setting on would be a good thing. But, you need to turn your thinking around when understanding how this works in TPA on older devices</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">On</dt>
 <dd>
-<p>Activates the Mip Mapping function, which serves mutiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This is better for devices with limited GPU capabilities.</p>
+<p>Activates the Mip Mapping function, which serves mutiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This requires more GPU processing power, and as you can expect, this add a performance impact for older devices.</p>
 </dd>
 <dt class="hdlist1">Off</dt>
 <dd>
-<p>Deactivates the Mip Mapping function, which serves the highest resolution mipmap. This requires more GPU processing power, and as you can expect, this add a performance impact for older devices.</p>
+<p>Deactivates the Mip Mapping function, which serves the highest resolution mipmap. This is better for devices with limited GPU capabilities.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>So turn it off if you have a next-gen device, but leave it on if you don&#8217;t.</p>
+<p>So turn it on if you have a next-gen device, but leave it off if you don&#8217;t.</p>
 </div>
 </div>
 <div class="sect3">
@@ -277,11 +277,11 @@ The table order in this list is well and truly out of alpha order. It is apparen
 <dl>
 <dt class="hdlist1">Controls</dt>
 <dd>
-<p>Text instructions on how to use touchscreen controls. There isn&#8217;t room in this screen to go into detail about configuring touch regions, or using a Hardware Controller.</p>
+<p>Text instructions on how to use touchscreen controls. No info about controller support. No info about moving the Launch Button (see Touchscreen Controls)</p>
 </dd>
 <dt class="hdlist1">Videos</dt>
 <dd>
-<p>You can buy two videos to stream.</p>
+<p>You can buy videos about the tables. I don&#8217;t know why you would: this type of info is free on YouTube.</p>
 </dd>
 <dt class="hdlist1">Our Mission</dt>
 <dd>
@@ -289,7 +289,7 @@ The table order in this list is well and truly out of alpha order. It is apparen
 </dd>
 <dt class="hdlist1">FarSight Credits</dt>
 <dd>
-<p>The dedicated production team behind our favourite game.</p>
+<p>Who makes the game, and Kickstarter backer credits.</p>
 </dd>
 <dt class="hdlist1">Twilight Zone Credits</dt>
 <dd>
@@ -305,11 +305,16 @@ The table order in this list is well and truly out of alpha order. It is apparen
 </dd>
 <dt class="hdlist1">Addams Family Credits</dt>
 <dd>
-<p>Included only to meet the requirements of the Kickstarter award tiers for this table.<br>
-== Configure the Launch Button Position To Suit Your Play Style</p>
+<p>Included only to meet the requirements of the Kickstarter award tiers for this table.</p>
 </dd>
 </dl>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="configure_the_launch_button_position_to_suit_your_play_style">Configure the Launch Button Position To Suit Your Play Style</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The launch button on tables such as Star Trek: The Next Generation (ST: TNG) and Attack From Mars (AFM) is positioned by default directly under the in-game Pause menu. This is impractical for most users playing TPA using the touchscreen.</p>
 </div>
@@ -318,7 +323,6 @@ The table order in this list is well and truly out of alpha order. It is apparen
 </div>
 <div class="paragraph">
 <p>The addition of button positions was not well advertised at the time it was implemented, and still remains something that a user needs to stumble across. Particularly as the item is off-screen in the Portrait menu, and three scrolls down in the Landscape menu. This was demonstrated beautifully in Episode 48 of <em>The Pinball Podcast</em>. The hosts tried to work out why the button was where it was and were totally unaware how to change it based on the in-game pause menu on Android.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="adjusting_the_launch_button_position">Adjusting the Launch Button Position</h3>
