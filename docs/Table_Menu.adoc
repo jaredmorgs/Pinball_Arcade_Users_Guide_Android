@@ -78,7 +78,7 @@ Button Position::
 For tables that feature a launched shooter lane (Attack From Mars, Monster Bash, and others) or features other special cabinet controls (Black Knight|Black Knight 2000 magnasave, Harley Davidson drain save) this option lets you move the position of the special buttons to a position that best suits your physical thumb reach. 
 Tap to move the button from the `Top` near the Pause Menu, in 5% increments down the screen. See <<Launch_Button>> for more information about this feature.
 Controller Mode::
-See <<Controller_Config>> for more information about controller support.
+See the <<Controller_Config,Controller Configuration>> section for more information about controller support.
 Tap to select from two options:
 
 * `A`, to use the upper trigger buttons as flipper controls (MOGA Mode A)
