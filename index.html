@@ -967,7 +967,10 @@ If you do not create a Saved Games restore point manually, <strong>all</strong> 
 <p>Ryan Routon, the former Android developer for TPA, confirmed back in October 2013 in <a href="http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108893&amp;viewfull=1#post108893">this post</a> that TPA uses a custom made in-house audio mixer&#8212;&#8203;lets call it FarSight Audio Mixer (FAM)--that is a bit "laggy". It mixes everything into a single channel (yep, no Stereo on any table: even those that originally supported it), which is then sent as a stream to the Java side of the app to be submitted in chunks to the OS.</p>
 </div>
 <div class="paragraph">
-<p>This lagginess was present well before October 2013 but the reasons causing the issue were not revealed until this date. Advances in devices since this date has not seen a performance boost in how the FarSight Audio Mixer operates. Frustratingly, there is no workaround to this issue, unless the mixer is completely rewritten. Lets just say a complete rewrite of the FAM is <strong>highly unlikely</strong> to happen. Ever.</p>
+<p>This lagginess was present well before October 2013 but the reasons causing the issue were not revealed until this date. Advances in device specifications since this date have not resulted in a performance boost to how the FAM operates.</p>
+</div>
+<div class="paragraph">
+<p>Frustratingly, there is no workaround to this issue, unless the mixer is completely rewritten. Lets just say a complete rewrite of the FAM is <strong>highly unlikely</strong> because it is definitely a non-trivial task to re-engineer how the FAM operates across all platforms.</p>
 </div>
 </div>
 <div class="sect2">
@@ -998,15 +1001,6 @@ If you do not create a Saved Games restore point manually, <strong>all</strong> 
 <p>It is actually the streaming aspect that is causing the delay. Even Google admits that the latency issues have been a long-standing issue on Android. They have been improving since ICS, but are still not really quite right.</p>
 </li>
 </ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="summary">Summary</h3>
-<div class="paragraph">
-<p>Even with Android 5.0 'Lollipop', and the default move to Android Runtime (ART) the Audio latency issue has not improved in one-an-a-half years.</p>
-</div>
-<div class="paragraph">
-<p>The writer is now quite dubious whether the stated issues are partly OS/app or entirely the FAM now. For example, the Shield Tablet has a huge amount of processing power and it still suffers from the Audio Latency. This just doesn&#8217;t add up to me.</p>
 </div>
 </div>
 </div>
