@@ -15,6 +15,7 @@ postsExpanded: false
 
 include::/docs/Introduction.adoc[]
 include::/docs/Settings_Menu.adoc[]
+include::/docs/Table_Menu.adoc[]
 include::/docs/Launch_Button.adoc[]
 include::/docs/Controller_Settings.adoc[]
 include::/docs/Google_Play_Services.adoc[]
