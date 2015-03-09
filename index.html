@@ -135,7 +135,7 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Update Owned and Restore All do not run as background processes. You must have TPA open all the time for this process to complete successfully. And if you lock your device and resume, the download will stop.
+Update All and Download Owned do not run as background processes. You must have TPA open all the time for this process to complete successfully. And if you lock your device and resume, the download will stop.
 </td>
 </tr>
 </table>
@@ -144,17 +144,20 @@ Update Owned and Restore All do not run as background processes. You must have T
 <dl>
 <dt class="hdlist1">Update All</dt>
 <dd>
-<p>Update all owned tables for each GA release that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources').</p>
+<p>Update all <em>downloaded</em> tables present on the device that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources').</p>
 </dd>
 <dt class="hdlist1">Download Owned</dt>
 <dd>
-<p>Bulk download all owned tables linked to your Google Play account used to purchase TPA Table Packs, or Season Passes.</p>
+<p>Bulk download all owned tables <em>missing from the app</em>, that are linked to your Google Play account used to purchase TPA Table Packs or Season Passes.</p>
 </dd>
 <dt class="hdlist1">Delete</dt>
 <dd>
 <p>There isn&#8217;t a button clearly indicating this, but you can delete individual table files by tapping the button to the left of each table name.</p>
 </dd>
 </dl>
+</div>
+<div class="paragraph">
+<p>If you are starting from a new device, and you wanted to download and update all owned tables, you would select <code>Download Owned</code>. If you already had all the tables on your device, and received an app update through Google Play, you would select <code>Update All</code>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -213,25 +216,38 @@ The table order in this list is well and truly out of alpha order. It is apparen
 <dl>
 <dt class="hdlist1">On</dt>
 <dd>
-<p>Activates the Mip Mapping function, which serves mutiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This is better for devices with limited GPU capabilities.</p>
+<p>Activates the Mip Mapping function, which serves multiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This is better for devices with limited GPU capabilities.</p>
 </dd>
 <dt class="hdlist1">Off</dt>
 <dd>
-<p>Deactivates the Mip Mapping function, which serves the highest resolution mipmap. This requires more GPU processing power, and as you can expect, this add a performance impact for older devices.</p>
+<p>Deactivates the Mip Mapping function, which serves the highest resolution mipmap. This requires more GPU processing power, and as you can expect, this may add a performance impact for older devices.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
-<p>So turn it off if you have a next-gen device, but leave it on if you don&#8217;t.</p>
+<p>The best advice for these two options is experiment with them on your device and see which setting delivers the best performance.</p>
+</div>
+<div class="paragraph">
+<p>My suggestion for renaming this to something more user-friendly would be:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sharpness = High</p>
+</li>
+<li>
+<p>Sharpness = Normal</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="detail">Detail</h4>
 <div class="paragraph">
-<p>Detail --or High LOD as most regular TPA Andorid forum users refer to it as-- was implemented <a href="http://pinballarcadefans.com/showthread.php/7358-High-lod-model-beta">mid February 2014</a>.</p>
+<p>Detail&#8201;&#8212;&#8201;or High LOD as most regular TPA Andorid forum users refer to it as&#8201;&#8212;&#8201;was implemented <a href="http://pinballarcadefans.com/showthread.php/7358-High-lod-model-beta">mid February 2014</a>.</p>
 </div>
 <div class="paragraph">
-<p>Depending on the device you own, you might not even see this menu. Early on in TPA&#8217;s life, some Samsung devices with Exynos System on a Chip (SoC) did not have a kernel flag set which caused this menu to be hidden. If you don&#8217;t see this menu, your device has a GPU that will probably struggle to run TPA in general.</p>
+<p>Depending on the device you own, you might not even see this menu. Some Samsung devices featuring the Exynos System on a Chip (SoC) (MALI) architecture did not have a kernel flag set which caused this menu to be hidden. If you don&#8217;t see this menu, your device has a GPU that will probably struggle to run TPA in general.</p>
 </div>
 <div class="paragraph">
 <p>High LOD affects what individual elements you see on the table. If you turn this setting to Standard from High, you will really notice the difference. Elements like screw heads, transparencies, plastics, bulbs, even some playfield elements like the curly wires on Party Zone disappear. All these elements put strain on the GPU to render them, so if your device has a weak GPU this setting will either need to be set to Standard, or may not even be visible to you.</p>
