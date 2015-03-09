@@ -1,7 +1,9 @@
 [[Table_Menu]]
 == Table Menu
 
-The following Table Options are available when you have selected the table from the main carousel. 
+The following Table Options are available when you have selected the table from the main carousel.
+
+=== Level One Menu Items
 
 Pro Menu::
 Activates Pro Features (In-app Purchase)
@@ -23,14 +25,14 @@ Shows what goals that remain in whatever level you are currently playing in. A l
 Legal Notice::
 Copyright information directly related to the selected table. 
 
-=== Options
+=== Options Sub-menu
 
 NOTE: You also see the same menu options when you have started the game and then tap `Pause` in the top right of the screen.
 
 Controls::
-Same info as described in the anchor:Settings_Menu[]
+Same info as described in the <<Settings_Menu>>
 Sound::
-Same info as described in the anchor:Settings_Menu[]
+Same info as described in the <<Settings_Menu>>
 Nudge::
 Tap to change between three options:
 
@@ -72,9 +74,9 @@ The Show Touch Scheme option is useful when configuring the Button Position. Tap
 * `On`, to show the touch scheme overlay.
 Button Position::
 For tables that feature a launched shooter lane (Attack From Mars, Monster Bash, and others) or features other special cabinet controls (Black Knight|Black Knight 2000 magnasave, Harley Davidson drain save) this option lets you move the position of the special buttons to a position that best suits your physical thumb reach. 
-Tap to move the button from the `Top` near the Pause Menu, in 5% increments down the screen. See anchor::Launch_Button[] for more information about this feature.
+Tap to move the button from the `Top` near the Pause Menu, in 5% increments down the screen. See <<Launch_Button>> for more information about this feature.
 Controller Mode::
-See anchor:Controller_Config[] for more information about controller support.
+See <<Controller_Config>> for more information about controller support.
 Tap to select from two options:
 
 * `A`, to use the upper trigger buttons as flipper controls (MOGA Mode A)
