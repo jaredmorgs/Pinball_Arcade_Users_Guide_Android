@@ -18,14 +18,16 @@ The menu items that make a difference to playing and enjoying TPA are:
 
 This menu is pretty self-explanatory. It lets you do the following:
 
-IMPORTANT: Update Owned and Restore All do not run as background processes. You must have TPA open all the time for this process to complete successfully. And if you lock your device and resume, the download will stop.
+IMPORTANT: Update All and Download Owned do not run as background processes. You must have TPA open all the time for this process to complete successfully. And if you lock your device and resume, the download will stop.
 
 Update All::
-Update all owned tables for each GA release that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources'). 
+Update all _downloaded_ tables present on the device that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources'). 
 Download Owned:: 
-Bulk download all owned tables linked to your Google Play account used to purchase TPA Table Packs, or Season Passes. 
+Bulk download all owned tables _missing from the app_, that are linked to your Google Play account used to purchase TPA Table Packs or Season Passes. 
 Delete::
 There isn't a button clearly indicating this, but you can delete individual table files by tapping the button to the left of each table name.
+
+If you are starting from a new device, and you wanted to download and update all owned tables, you would select `Download Owned`. If you already had all the tables on your device, and received an app update through Google Play, you would select `Update All`. 
 
 NOTE: The table order in this list is well and truly out of alpha order. It is apparently sorted based on the date the table pack was released. That's why you see all the older tables from Season 1 and Season 2 appearing first. 
 
@@ -58,17 +60,22 @@ You'll need to visit http://en.m.wikipedia.org/wiki/Mipmap[Wikipedia] for a conc
 You would think that turning this setting on would be a good thing. But, you need to turn your thinking around when understanding how this works in TPA.
 
 On::
-Activates the Mip Mapping function, which serves mutiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This is better for devices with limited GPU capabilities.  
+Activates the Mip Mapping function, which serves multiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This is better for devices with limited GPU capabilities.  
 Off::
-Deactivates the Mip Mapping function, which serves the highest resolution mipmap. This requires more GPU processing power, and as you can expect, this add a performance impact for older devices.
+Deactivates the Mip Mapping function, which serves the highest resolution mipmap. This requires more GPU processing power, and as you can expect, this may add a performance impact for older devices.
 
-So turn it off if you have a next-gen device, but leave it on if you don't.
+The best advice for these two options is experiment with them on your device and see which setting delivers the best performance.
+
+My suggestion for renaming this to something more user-friendly would be:
+
+* Sharpness = High
+* Sharpness = Normal
 
 ==== Detail
 
-Detail --or High LOD as most regular TPA Andorid forum users refer to it as-- was implemented http://pinballarcadefans.com/showthread.php/7358-High-lod-model-beta[mid February 2014].
+Detail -- or High LOD as most regular TPA Andorid forum users refer to it as -- was implemented http://pinballarcadefans.com/showthread.php/7358-High-lod-model-beta[mid February 2014].
 
-Depending on the device you own, you might not even see this menu. Early on in TPA's life, some Samsung devices with Exynos System on a Chip (SoC) did not have a kernel flag set which caused this menu to be hidden. If you don't see this menu, your device has a GPU that will probably struggle to run TPA in general.
+Depending on the device you own, you might not even see this menu. Some Samsung devices featuring the Exynos System on a Chip (SoC) (MALI) architecture did not have a kernel flag set which caused this menu to be hidden. If you don't see this menu, your device has a GPU that will probably struggle to run TPA in general.
 
 High LOD affects what individual elements you see on the table. If you turn this setting to Standard from High, you will really notice the difference. Elements like screw heads, transparencies, plastics, bulbs, even some playfield elements like the curly wires on Party Zone disappear. All these elements put strain on the GPU to render them, so if your device has a weak GPU this setting will either need to be set to Standard, or may not even be visible to you.
 
