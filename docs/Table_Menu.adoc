@@ -1,7 +1,9 @@
 [[Table_Menu]]
 == Table Menu
 
-The following Table Options are available when you have selected the table from the main carousel.
+The Table Menu is one of four options presented when you have selected the table from the table carousel. This menu is full of settings and options: some of which are obvious, and some that aren't as clear as they could be. UI limitations are somewhat to blame here. 
+
+The mobile platform developers suggest you experiment with these options so you can discover what they do. I don't feel this is a great UX for new adopters. Lets learn more about the options, described in this chapter in sufficient detail.
 
 === Level One Menu Items
 
