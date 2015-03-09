@@ -1,3 +1,4 @@
+[[Table_Menu]]
 == Table Menu
 
 The following Table Options are available when you have selected the table from the main carousel. 
