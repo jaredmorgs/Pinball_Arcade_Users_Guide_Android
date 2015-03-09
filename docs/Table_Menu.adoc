@@ -1,6 +1,6 @@
 == Table Menu
 
-The following Table Options are available when you have selected the table from the main carousel.
+The following Table Options are available when you have selected the table from the main carousel. 
 
 Pro Menu::
 Activates Pro Features (In-app Purchase)
@@ -23,6 +23,8 @@ Legal Notice::
 Copyright information directly related to the selected table. 
 
 === Options
+
+NOTE: You also see the same menu options when you have started the game and then tap `Pause` in the top right of the screen.
 
 Controls::
 Same info as described in the anchor:Settings_Menu[]
