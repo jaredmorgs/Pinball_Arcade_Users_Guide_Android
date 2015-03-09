@@ -1,0 +1,78 @@
+== Table Menu
+
+The following Table Options are available when you have selected the table from the main carousel.
+
+Pro Menu::
+Activates Pro Features (In-app Purchase)
+Instructions::
+Teaches you how to play the game.
+High Scores::
+Displays the device-stored high scores.
+Extras::
+Shows the following options:
+
+* `Table History`, which re-displays the table history you see when you play the table for the first time
+* `Flyer`, which displays the official game promotional flyer issued to operators by the manufacturer.
+* `Custom Ball`, which displays the currently selected custom ball. Use the arrows to select other balls to use on the table.
+* `Buy Custom Balls`, which allows you to purchase different ball packs for use on all tables.
+Options::
+Further game options described in the next section.
+Standard|Wizard Goals::
+Shows what goals that remain in whatever level you are currently playing in. A link to directly view instructions is also available.
+Legal Notice::
+Copyright information directly related to the selected table. 
+
+=== Options
+
+Controls::
+Same info as described in the anchor:Settings_Menu[]
+Sound::
+Same info as described in the anchor:Settings_Menu[]
+Nudge::
+Tap to change between three options:
+
+* `Touchscreen`, to use the Touch Scheme selected later in the menu.
+* `Shake`, to tilt using the accelerometer in the device (hardware dependent).
+* `Off`, to completely disable tilting in the game. 
+Multiball Camera::
+Tap to change between two options:
+
+* `Off`, which allows the table cameras to scroll up and down the table during multiball, if all balls are in a certain zone.
++
+NOTE: This setting can cause camera bugs to appear on some tables that switch the view to the plunger cam during multiball.
++
+* `On`, which prevents the table cameras from scrolling and locks the camera view to a static view of the playfield.
+Tilt::
+Initially this feature is locked until all Wizard goals are achieved. Tap to change between two options:
+
+* `On`, which leaves the tilt system activated, and lets you post to FarSight Leaderboards.
+* `Off`, which disables the tilt warning system, and prevents you from posting to FarSight Leaderboards.
+Invert Nudge::
+Tap to change between two options:
+
+* `On`, which means when you tap the left touch zone, the table moves right to left.
+* `Off`, which means when you tap the left touch zone, the table moves left to right.
+Event Camera::
+Tap to select one of two options:
+
+* `On`, which zooms in on pre-defined features in the game (like the THING hand in The Addams Family, or the Gumball Machine in The Twilight Zone)
+* `Off`, which keeps the view from scrolling up the table.
++
+NOTE: This feature may cause issues with multiball cameras if turned `On`. Generally if you want a good in-game experience without camera bugs, select `Off` for the most bug-free experience.
++
+Touch Scheme::
+Tap to select from one of six touch schemes that alter the areas where your fingers tilt and flip.
+Show Touch Scheme::
+The Show Touch Scheme option is useful when configuring the Button Position. Tap to change between two options:
+
+* `Off`, to hide the touch scheme overlay on the screen.
+* `On`, to show the touch scheme overlay.
+Button Position::
+For tables that feature a launched shooter lane (Attack From Mars, Monster Bash, and others) or features other special cabinet controls (Black Knight|Black Knight 2000 magnasave, Harley Davidson drain save) this option lets you move the position of the special buttons to a position that best suits your physical thumb reach. 
+Tap to move the button from the `Top` near the Pause Menu, in 5% increments down the screen. See anchor::Launch_Ball_Position[] for more information about this feature.
+Controller Mode::
+See anchor:Controller_Configuration[] for more information about controller support.
+Tap to select from two options:
+
+* `A`, to use the upper trigger buttons as flipper controls (MOGA Mode A)
+* `B`, to use the lower trigger buttons as flipper controls (MOGA Mode B)
