@@ -30,9 +30,9 @@ Copyright information directly related to the selected table.
 NOTE: You also see the same menu options when you have started the game and then tap `Pause` in the top right of the screen.
 
 Controls::
-Same info as described in the <<Settings_Menu>>
+Same info as described in the <<Settings_Menu,Settings>> menu.
 Sound::
-Same info as described in the <<Settings_Menu>>
+Same info as described in the <<Settings_Menu,Settings>> menu.
 Nudge::
 Tap to change between three options:
 
