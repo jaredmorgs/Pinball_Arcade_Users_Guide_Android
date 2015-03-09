@@ -1,3 +1,4 @@
+[[Launch_Button]]
 == Configure the Launch Button Position To Suit Your Play Style
 
 The launch button on tables such as Star Trek: The Next Generation (ST: TNG) and Attack From Mars (AFM) is positioned by default directly under the in-game Pause menu. This is impractical for most users playing TPA using the touchscreen. 
