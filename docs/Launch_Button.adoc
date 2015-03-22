@@ -1,3 +1,4 @@
+:numbered:
 [[Launch_Button]]
 == Configure the Launch Button Position To Suit Your Play Style
 
