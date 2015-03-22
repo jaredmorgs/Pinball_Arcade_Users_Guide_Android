@@ -1,4 +1,3 @@
-:numbered:
 [[Settings_Menu]]
 == The Settings Menu Explained
 :toc:

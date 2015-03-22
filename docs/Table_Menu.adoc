@@ -1,4 +1,3 @@
-:numbered:
 [[Table_Menu]]
 == Table Menu
 

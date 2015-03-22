@@ -1,4 +1,3 @@
-:numbered:
 [[Google_Play_Services]]
 == Google Play Services
 Coinciding with the Season 4 release of Earthshaker, a http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games[long-standing request] (one of many) was finally implemented: Google Play Services support.

@@ -1,4 +1,3 @@
-:numbered:
 == Why This Guide Exists
 I'll be frank: this guide exists because of my frustrations with the User Interface (UI) currently implemented in FarSight Studios' _The Pinball Arcade_ (TPA) for Android. My personal opinion is the UI is limiting, it confuses customers, and offers a poor User Experience (UX) for new users (and even seasoned users familiar with TPA in some cases).
 
