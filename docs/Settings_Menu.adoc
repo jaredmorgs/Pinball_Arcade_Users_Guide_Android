@@ -1,5 +1,6 @@
 [[Settings_Menu]]
 == The Settings Menu Explained
+:toc:
 
 Because of User Interface limitations, the Settings menu is a bit of a mess. There are some options that use Developer speak and would be meaningless to many users, yet are very important for configuring optimum performance in Android for older devices. Some menu items don't even display depending on your device kernel flags (say what, now). 
 
@@ -14,7 +15,7 @@ The menu items that make a difference to playing and enjoying TPA are:
 * Detail
 * Textures
 
-=== Manage Tables
+==== Manage Tables
 
 This menu is pretty self-explanatory. It lets you do the following:
 
@@ -31,7 +32,7 @@ If you are starting from a new device, and you wanted to download and update all
 
 NOTE: The table order in this list is well and truly out of alpha order. It is apparently sorted based on the date the table pack was released. That's why you see all the older tables from Season 1 and Season 2 appearing first. 
 
-==== Managing Tables Outside the Interface
+===== Managing Tables Outside the Interface
 
 There is another way to manage tables that allows you to do away with the somewhat awkward menu in TPA. All you need is your favourite Android file browser.
 
@@ -39,7 +40,7 @@ The game Downloadable Content (DLC) is stored in the `/sdcard/Android/data/com.f
 
 It is arguably easier to navigate to this directory and delete files manually. The method through the UI is fine, but slow. Only use it if you are not comfortable deleting files through the file system.
 
-==== Back Up Your DLC
+===== Back Up Your DLC
 
 Unless you have a very fast data connection and you live in the United States, I'd *strongly recommend* you back up your DLC to DropBox, Copy, or even just to a folder on your computer. Just get them off your device. Depending on what Content Delivery Network (CDN) node you connect to, it might take anywhere between 30 minutes to four hours to restore all DLC to your device. Having a local copy synchronised to your device will make restoring faster. Much faster.
 
@@ -100,9 +101,9 @@ The rest of these options really belong in another menu. I've suggested this in 
 Controls::
 Text instructions on how to use touchscreen controls. There isn't room in this screen to go into detail about configuring touch regions, or using a Hardware Controller.
 Videos::
-You can buy two videos to stream.
+You can purchase two videos to stream.
 Our Mission::
-What the game is all about.
+What the game's primary mission is.
 FarSight Credits::
 The dedicated production team behind our favourite game.
 Twilight Zone Credits::
