@@ -51,6 +51,11 @@ NOTE: On Black Knight both Magnasave magnets are activated when lit when the con
 
 === Moga Pro / Playstation 3 / Shield Portable / Shield Tablet
 
+Scroll Table Carousel::
+Up = L2, or L1 in Type A scheme 
+Down = R2, or R1 in Type A scheme
+Select Table from Carousel::
+A
 Left Flipper::
 L2, or L1 in Type A scheme
 Right Flipper::
