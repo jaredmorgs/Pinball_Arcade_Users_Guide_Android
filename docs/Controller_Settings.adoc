@@ -1,3 +1,4 @@
+[[Controller_Settings]]
 == Controller Configuration
 
 This content was originally rolled up into a thread in http://pinballarcadefans.com/showthread.php/6662-Explained-Controller-Support-Options-for-Android[this thread] on the Pinball Arcade Fans forum. The thread rolls-up conversation fragments in http://pinballarcadefans.com/showthread.php/566-Controller-support-for-Android[this thread], to make it easier for folks to work out what controllers work with The Pinball Arcade (TPA) on Android.
