@@ -1,4 +1,3 @@
-:numbered:
 [[Controller_Settings]]
 == Controller Configuration
 
