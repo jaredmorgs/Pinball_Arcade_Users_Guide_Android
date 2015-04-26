@@ -322,7 +322,8 @@ The table order in this list is well and truly out of alpha order. It is apparen
 </dd>
 <dt class="hdlist1">Addams Family Credits</dt>
 <dd>
-<p>Included only to meet the requirements of the Kickstarter award tiers for this table.</p>
+<p>Included only to meet the requirements of the Kickstarter award tiers for this table.<br>
+:numbered:</p>
 </dd>
 </dl>
 </div>
@@ -818,7 +819,7 @@ On Black Knight both Magnasave magnets are activated when lit when the controlle
 <h2 id="Google_Play_Services">6. Google Play Services</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Coinciding with the Season 4 release of Earthshaker, a <a href="http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games">long-standing request</a> (one of many) was finally implemented: Google Play Services support.</p>
+<p>Coinciding with the Season 4 release of Earthshaker, a <a href="http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games">long-standing request</a> was implemented: Google Play Services (GPS) support.</p>
 </div>
 <div class="paragraph">
 <p>The history behind this request being so important was because the game&#8217;s achievements and high scores were all saved in a local database residing in a protected part of the Android Operating System in <code>/data/data/com.farsight.AndroidPinball.javaproject/files/saved_data</code>. This directory could only be accessed by the user if they had unlocked the devices' bootloader and installed a superuser binary (also known as "rooting").</p>
@@ -843,7 +844,7 @@ On Black Knight both Magnasave magnets are activated when lit when the controlle
 <p>Remember that local database? Yep, it is still being used to service the GPS achievements and leaderboard tracking. When the game hooks tell the database that an achievement has been achieved, it adds a flag to the database. When all flags for the Standard achievement group are set, the game triggers GPS to award the associated Achievement.</p>
 </div>
 <div class="paragraph">
-<p>This continuing use of the <code>saved_games</code> local database is the single point of failure for user issues relating to lost data, as you&#8217;ll discover later in this section.</p>
+<p>This continued use of the <code>saved_games</code> local database is in my opinion the single point of failure for user issues relating to lost data, as you&#8217;ll discover later in this section.</p>
 </div>
 </div>
 </div>
@@ -901,14 +902,8 @@ If you do not create a Saved Games restore point manually, <strong>all</strong> 
 <div class="paragraph">
 <p>In this scenario, you would have to start your Wizard Goals again for that table because the local database has no record of the other four goals being achieved. GPS does. TPA does not.</p>
 </div>
-<div class="paragraph">
-<p><strong>This is the dangerous aspect of how Saved Games has been implemented: it is unintuitive for the average user.</strong></p>
-</div>
 <div class="sect3">
 <h4 id="how_to_create_a_saved_games_restore_point">6.3.1. How to Create a Saved Games Restore Point</h4>
-<div class="paragraph">
-<p>Manually creating a Saved Games Restore point is easy.</p>
-</div>
 <div class="olist arabic">
 <div class="title">How to Create a Saved Games Restore Point</div>
 <ol class="arabic">
@@ -944,13 +939,56 @@ If you do not create a Saved Games restore point manually, <strong>all</strong> 
 <p>Back up no less than weekly if you are a regular TPA player.</p>
 </li>
 <li>
-<p>Back up no less that monthly if you are a casual player.</p>
+<p>Back up no less than monthly if you are a casual player.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>There is no way to schedule a Saved Games backup in the game, so you will need to rely on other systems to remind you. I set a Calendar reminder to back up each month, which is a workaround until a better way of managing this important data-retention activity is implemented.<br>
+<p>There is no way to schedule a Saved Games backup in the game, so you will need to rely on other systems to remind you. I use the DLC cycle as my memory jogger to create a new Saved Game restore point. It&#8217;s a workaround until a better way of managing this important data-retention activity is implemented.</p>
+</div>
+<div class="sect4">
+<h5 id="deleting_saved_games">Deleting Saved Games</h5>
+<div class="paragraph">
+<p>Through no fault of FarSight&#8217;s, GPS has a hard limit of three saved game points for each game. If you play regularly, you will quickly use those slots up and must delete some older saved games to maintain a current save profile.</p>
+</div>
+<div class="paragraph">
+<p>There is a gotcha in the way you delete the Saved Game files, which is down to a Google UX issue, and not a FarSight UX issue.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tap the <code>Google Play</code> button on the main screen.</p>
+</li>
+<li>
+<p>Tap <code>Save/Load</code></p>
+</li>
+<li>
+<p>Tap <code>Action Overflow</code> (three vertical docs) to access the delete function. +</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Touching anywhere other than this will <strong>load</strong> the profile immediately, potentially causing local progress data loss by loading an older save point over the new data.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Tap <code>Delete Saved Game</code> to delete the record.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>It would be better if Google had clearly-defined Save and Load buttons on each Saved Game card, but they don&#8217;t. Hopefully now you won&#8217;t get caught out.</p>
+</div>
+<div class="paragraph">
+<p>Thanks to <em>Xanjia</em> for this data-preserving tip.<br>
 :numbered:</p>
+</div>
 </div>
 </div>
 </div>

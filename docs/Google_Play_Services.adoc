@@ -1,7 +1,7 @@
 :numbered:
 [[Google_Play_Services]]
 == Google Play Services
-Coinciding with the Season 4 release of Earthshaker, a http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games[long-standing request] (one of many) was finally implemented: Google Play Services support.
+Coinciding with the Season 4 release of Earthshaker, a http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games[long-standing request] was implemented: Google Play Services (GPS) support.
 
 The history behind this request being so important was because the game's achievements and high scores were all saved in a local database residing in a protected part of the Android Operating System in `/data/data/com.farsight.AndroidPinball.javaproject/files/saved_data`. This directory could only be accessed by the user if they had unlocked the devices' bootloader and installed a superuser binary (also known as "rooting").
 
@@ -17,7 +17,7 @@ To qualify for the GPS achievement, all goals must be achieved before the GPS Ac
 ==== Implementation
 Remember that local database? Yep, it is still being used to service the GPS achievements and leaderboard tracking. When the game hooks tell the database that an achievement has been achieved, it adds a flag to the database. When all flags for the Standard achievement group are set, the game triggers GPS to award the associated Achievement.
 
-This continuing use of the `saved_games` local database is the single point of failure for user issues relating to lost data, as you'll discover later in this section.
+This continued use of the `saved_games` local database is in my opinion the single point of failure for user issues relating to lost data, as you'll discover later in this section.
 
 === Understanding Saved Games in TPA
 IMPORTANT: If you do not create a Saved Games restore point manually, *all* local achievements (Standard/Wizard Goals, or Local High Scores) will be lost  if you un-install or re-install TPA on the same--or other--device.
@@ -43,10 +43,7 @@ Consider the following scenario:
 
 In this scenario, you would have to start your Wizard Goals again for that table because the local database has no record of the other four goals being achieved. GPS does. TPA does not.
 
-*This is the dangerous aspect of how Saved Games has been implemented: it is unintuitive for the average user.*
-
 ==== How to Create a Saved Games Restore Point
-Manually creating a Saved Games Restore point is easy.
 
 .How to Create a Saved Games Restore Point
 
@@ -63,6 +60,24 @@ As a general guideline:
 
 * Back up after you achieve a Goal or a High Score in TPA.
 * Back up no less than weekly if you are a regular TPA player.
-* Back up no less that monthly if you are a casual player.
+* Back up no less than monthly if you are a casual player.
 
-There is no way to schedule a Saved Games backup in the game, so you will need to rely on other systems to remind you. I set a Calendar reminder to back up each month, which is a workaround until a better way of managing this important data-retention activity is implemented.
+There is no way to schedule a Saved Games backup in the game, so you will need to rely on other systems to remind you. I use the DLC cycle as my memory jogger to create a new Saved Game restore point. It's a workaround until a better way of managing this important data-retention activity is implemented.
+
+===== Deleting Saved Games 
+
+Through no fault of FarSight's, GPS has a hard limit of three saved game points for each game. If you play regularly, you will quickly use those slots up and must delete some older saved games to maintain a current save profile.
+
+There is a gotcha in the way you delete the Saved Game files, which is down to a Google UX issue, and not a FarSight UX issue.
+
+. Tap the `Google Play` button on the main screen.
+. Tap `Save/Load`
+. Tap `Action Overflow` (three vertical docs) to access the delete function. +
++
+WARNING: Touching anywhere other than this will *load* the profile immediately, potentially causing local progress data loss by loading an older save point over the new data.
++
+. Tap `Delete Saved Game` to delete the record.
+
+It would be better if Google had clearly-defined Save and Load buttons on each Saved Game card, but they don't. Hopefully now you won't get caught out. 
+
+Thanks to _Xanjia_ for this data-preserving tip.
