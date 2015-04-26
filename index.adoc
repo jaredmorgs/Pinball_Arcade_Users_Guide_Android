@@ -12,7 +12,7 @@ postsExpanded: false
 :toc:
 :imagesdir: images
 :homepage: http://jaredmorgs.github.io/Pinball_Arcade_Users_Guide_Android
-
+:numbered:
 include::/docs/Introduction.adoc[]
 include::/docs/Settings_Menu.adoc[]
 include::/docs/Table_Menu.adoc[]
