@@ -1,6 +1,4 @@
-:numbered:
 [[Android_Sound_Delay]]
-
 == Why Android Sound Effects Always Lag Behind the Action
 You might have noticed that mechanical effects in all Android tables seem to be running up to a quarter second behind the action on the table.
 
