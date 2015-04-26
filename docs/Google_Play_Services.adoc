@@ -81,3 +81,4 @@ WARNING: Touching anywhere other than this will *load* the profile immediately, 
 It would be better if Google had clearly-defined Save and Load buttons on each Saved Game card, but they don't. Hopefully now you won't get caught out. 
 
 Thanks to _Xanjia_ for this data-preserving tip.
+
