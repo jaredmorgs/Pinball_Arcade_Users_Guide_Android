@@ -1,13 +1,18 @@
-:numbered:
 == Why This Guide Exists
-I'll be frank: this guide exists because of my frustrations with the User Interface (UI) currently implemented in FarSight Studios' _The Pinball Arcade_ (TPA) for Android. My personal opinion is the UI is limiting, it confuses customers, and offers a poor User Experience (UX) for new users (and even seasoned users familiar with TPA in some cases).
 
-There has been talk of FarSight updating the UI. But they have been saying that for at least a year now, and nothing gets done. The user base swells, but the UX still remains untouched. I've been working around issues caused by the UI for at least that long, and the number of cases I've encountered where customers are just plain confused about features is getting to the point where I have no choice but to take action.
+[quote, iconfinder.com]
+A User Interface is like a joke: if you have to explain it, it's not that good.
 
-I'm trying to solve some of these issues by writing this user guide. The guide contains information about features in TPA that can't be adequately explained in-game because of a combination of UI limitations and the complexity of the feature.
+This guide exists because of limitation in the User Interface (UI) currently implemented in FarSight Studios' _The Pinball Arcade_ (TPA) for Android. In its current form, the UI is limiting, it confuses customers, and offers an unsatisfactory User Experience (UX) for new and seasoned users alike.
 
-This guide is not a tool created to disrespect FarSight and their product. Quite the opposite: it is a factual (sometimes raw) testimonial from a customer who happens to be a volunteer beta tester and Technical Writer.  A lot of things in this guide can be figured out by playing around with the UI: some users will be comfortable with this and some won't. There are some things that really aren't intuitive, and some things that if you assume you know how they work, you may be unpleasantly surprised down the track.
+The Pinball Arcade Fans community and I have been working around issues caused by the UI for close to two years now, and the number of cases I've personally encountered where customers are just plain confused about features is getting to the point where I have no choice but to take action.
 
-I hope that if you are a new user to TPA Android, this guide helps you get the most out of the app. I hope that if someone at FarSight reads this, they understand the intent and take urgent action to address the workarounds and caveats I've documented in here.
+The Users Guide contains information about features in TPA that can't be adequately explained in-game because of a combination of UI limitations and/or the complexity of the feature.
 
-So get reading, then get flipping!
+A lot of things in this guide can be figured out by playing around with the UI: you might be comfortable doing this. If you aren't comfortable doing this, you may be in for a rough ride: some features really aren't intuitive, and some features may unpleasantly surprise you down the track if you don't fully understand how they work.
+
+This guide is not a tool created to disrespect FarSight and their product. Quite the opposite: it is a factual testimonial from a customer who happens to be a volunteer beta tester and Technical Writer.  
+
+TPA really is the only game in town if you want to play real pinball from the leading manufacturers. If the UI and UX can be fixed, then the game will continue to grow. I fear that if it doesn't improve, the game will fall behind it's competitors.
+
+I hope this guide helps you get the most out of the app. 
