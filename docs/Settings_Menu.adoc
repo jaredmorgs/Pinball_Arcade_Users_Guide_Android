@@ -1,7 +1,11 @@
 [[Settings_Menu]]
 == The Settings Menu Explained
 
-Because of User Interface limitations, the Settings menu is a bit of a mess. There are some options that use Developer speak and would be meaningless to many users, yet are very important for configuring optimum performance in Android for older devices. Some menu items don't even display depending on your device kernel flags (say what, now). 
+User Interface limitations caused the Settings menu to evolve from a pretty terse list of items, to what is is now. 
+
+There are some options that use Developer speak and would be meaningless to many users, yet are very important for configuring optimum performance in Android for older devices. 
+
+Some Graphics menu items do not display depending on your device kernel flags and OpenGL capabilities (say what, now). 
 
 Read on to learn more about these issues, and how to work around them.
 
@@ -18,18 +22,20 @@ The menu items that make a difference to playing and enjoying TPA are:
 
 This menu is pretty self-explanatory. It lets you do the following:
 
-IMPORTANT: Update All and Download Owned do not run as background processes. You must have TPA open all the time for this process to complete successfully. And if you lock your device and resume, the download will stop.
+IMPORTANT: `Update All` and `Download Owned` do not run as background processes. You must have TPA open all the time for this process to complete successfully. 
 
 Update All::
 Update all _downloaded_ tables present on the device that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources'). 
 Download Owned:: 
 Bulk download all owned tables _missing from the app_, that are linked to your Google Play account used to purchase TPA Table Packs or Season Passes. 
 Delete::
-There isn't a button clearly indicating this, but you can delete individual table files by tapping the button to the left of each table name.
+By tapping the button to the left of each table in the list, you can delete individual table files.
 
-If you are starting from a new device, and you wanted to download and update all owned tables, you would select `Download Owned`. If you already had all the tables on your device, and received an app update through Google Play, you would select `Update All`. 
+NOTE: The table order in this list is well and truly out of alpha order. It is sorted based on the date the table packs were released. That's why you see all the older tables from Season 1 and Season 2 appearing first. 
 
-NOTE: The table order in this list is well and truly out of alpha order. It is apparently sorted based on the date the table pack was released. That's why you see all the older tables from Season 1 and Season 2 appearing first. 
+If you are starting from a new device, and you wanted to download and update all owned tables, you would select `Download Owned`. This will download all tables you own _in the order they were released_, starting at Season 1. 
+
+If you already had all the tables on your device, and received an app update through Google Play, you would select `Update All` to pull down any updates table files. 
 
 ===== Managing Tables Outside the Interface
 
@@ -37,7 +43,7 @@ There is another way to manage tables that allows you to do away with the somewh
 
 The game Downloadable Content (DLC) is stored in the `/sdcard/Android/data/com.farsight.AndroidPinball.javaProject/files/` folder. 
 
-It is arguably easier to navigate to this directory and delete files manually. The method through the UI is fine, but slow. Only use it if you are not comfortable deleting files through the file system.
+It is arguably easier to navigate to this directory and delete files manually. The method through the UI works, but is slow. Only use it if you are not comfortable deleting files through the file system.
 
 ===== Back Up Your DLC
 
@@ -53,9 +59,9 @@ Note that this turns off *all* sound effects and music. There are no subtle sett
 
 ==== Mip Mapping
 
-By far, this menu screams "Developer Speak" in an app specifically not targeted at Developers. But the fact is even the menu item has been misnamed: it should be _Anisotropic Filtering_. But try fitting that word into the current UI and you'll soon understand why this menu name was chosen. 
+This menu screams "Developer Speak" in an app specifically not targeted at Developers. Another issue is the menu item has been misnamed: it should be _Anisotropic Filtering_. But try fitting that word into the current UI and you'll soon understand why Mip Mapping was chosen. 
 
-You'll need to visit http://en.m.wikipedia.org/wiki/Mipmap[Wikipedia] for a concise description, but what this setting basically does is affect performance on devices in the area of "depth of field" and the sharpness of the depth of field.
+You'll need to visit http://en.m.wikipedia.org/wiki/Mipmap[Wikipedia] for a concise description, but what this setting does is affect performance on devices in the area of "depth of field" and the sharpness of the depth of field.
 
 You would think that turning this setting on would be a good thing. But, you need to turn your thinking around when understanding how this works in TPA.
 
@@ -77,16 +83,16 @@ Detail -- or High LOD as most regular TPA Andorid forum users refer to it as -- 
 
 Depending on the device you own, you might not even see this menu. Some Samsung devices featuring the Exynos System on a Chip (SoC) (MALI) architecture did not have a kernel flag set which caused this menu to be hidden. If you don't see this menu, your device has a GPU that will probably struggle to run TPA in general.
 
-High LOD affects what individual elements you see on the table. If you turn this setting to Standard from High, you will really notice the difference. Elements like screw heads, transparencies, plastics, bulbs, even some playfield elements like the curly wires on Party Zone disappear. All these elements put strain on the GPU to render them, so if your device has a weak GPU this setting will either need to be set to Standard, or may not even be visible to you.
+High LOD affects what individual elements you see on the table. If you turn this setting to Standard from High, you will really notice the difference. Elements like screw heads, transparencies, plastics, bulbs, even some playfield elements like the curly wires on Bally's _The Party Zone_ disappear. All these elements put strain on the GPU to render them, so if your device has a weak GPU this setting will either need to be set to Standard, or may not even be visible to you.
 
 High::
-Get the best possible textures. This is the default for this menu now.
+All elements originally present on the table. This is the default for this menu now.
 Normal::
-Less crisp textures, but a performance boost for older devices.
+Less table detail means that certain high-pologon objects are disabled. A performance boost is gained for older devices.
 
 ==== Textures
 
-Textures is actually to do with Polygon counts in the models on the Tables. If you set this to the Normal setting, close ups of stand-up targets in _The Machine: Bride of Pinbot_ appear hexagonal. Set it to High, and they are far less hexagonal featuring about twice the polygon count.
+Textures is actually to do with Polygon counts in the models on the Tables. If you set this to the Normal setting, close ups of stand-up targets in Williams' _The Machine: Bride of Pinbot_ appear hexagonal. Set it to High, and they are far less hexagonal featuring about twice the polygon count.
 
 High::
 The highest polygon count possible in the table models used in TPA. This is the default for this menu now.
