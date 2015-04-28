@@ -43,7 +43,7 @@
     <div class="large-12 columns">
         <h1>Users Guide for The Pinball Arcade on Android</h1>
         <p><span class="author">Written with passion by Jared Morgan (jaredmorgs) at &lt;jaredleonmorgan@gmail.com&gt;</span></p>
-        <p><span class="version">Version 1.1</span></p>
+        <p><span class="version">Version 1.2</span></p>
     </div>
     <div class="large-12 columns"
             <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
@@ -573,7 +573,199 @@ Tap to select from two options:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Launch_Button">4. Moving the Launch Button</h2>
+<h2 id="Google_Play_Services">4. Google Play Services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Coinciding with the Season 4 release of Earthshaker, a <a href="http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games">long-standing request</a> was implemented: Google Play Services (GPS) support.</p>
+</div>
+<div class="paragraph">
+<p>For the purposes of brevity, the way you use this feature is described first, with some background info presented after the main procedures. It&#8217;s worth reading on past the procedures if you are interested in the "why" this feature appears to be implemented the way it is.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If you do not create a Saved Games restore point manually, <strong>all</strong> local achievements (Standard/Wizard Goals, Local High Scores, and Hall of Fame (HOF) points) are lost if you remove TPA, or suffer a casastrophic device failure.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="how_do_i_create_a_saved_game_profile_in_pinball_arcade">4.1. How Do I Create a Saved Game Profile in Pinball Arcade?</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tap the <code>Google Play</code> button on the main screen.</p>
+</li>
+<li>
+<p>Tap <code>Save/Load</code></p>
+</li>
+<li>
+<p>Tap <code>Save New Game</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You now have one restore point that you can use to revert to if something catastrophic happens.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="how_do_i_delete_a_saved_game_profile_in_pinball_arcade">4.2. How Do I Delete a Saved Game Profile in Pinball Arcade?</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tap the <code>Google Play</code> button on the main screen.</p>
+</li>
+<li>
+<p>Tap <code>Save/Load</code></p>
+</li>
+<li>
+<p>Tap <code>Action Overflow</code> (three vertical docs) to access the delete function. +</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Touching anywhere other than this will <strong>load</strong> the profile immediately, potentially causing local progress data loss by loading an older save point over the new data.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Tap <code>Delete Saved Game</code> to delete the record.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Thanks to <em>Xanija</em> for this data-preserving tip.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="maintaining_your_local_game_progress">4.3. Maintaining Your Local Game Progress</h3>
+<div class="paragraph">
+<p>You need to keep manually creating backups using Saved Games in case you need to restore. Depending on how much you play TPA will determine how often you create a backup.</p>
+</div>
+<div class="paragraph">
+<p>As a general guideline:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Back up after you achieve a Goal or a High Score in TPA.</p>
+</li>
+<li>
+<p>Back up no less than weekly if you are a regular TPA player.</p>
+</li>
+<li>
+<p>Back up no less than monthly if you are a casual player.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There is no way to schedule a Saved Games backup in the game, so you will need to rely on other systems to remind you. I use the DLC cycle as my memory jogger to create a new Saved Game restore point. It&#8217;s a workaround until a better way of managing this important data-retention activity is implemented.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saved_games_hard_limit">4.4. Saved Games Hard Limit</h3>
+<div class="paragraph">
+<p>FarSight have opted for a hard limit of three saved game points for each game. If you play regularly, you will quickly use those slots up and must delete some older saved games to maintain a current save profile.</p>
+</div>
+<div class="paragraph">
+<p>TPA Android users have confirmed that other games with this feature have more than three slots available, and clearly-defined <code>Save</code> and <code>Load</code> buttons on the Saved Game tile itself. This is an area of improvement FarSight can fix now, to improve the customer experience.</p>
+</div>
+<div class="paragraph">
+<p>There is a gotcha in the way you delete the Saved Game files with the current GPS  Saved Games UI</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="history_of_this_request">4.5. History of This Request</h3>
+<div class="paragraph">
+<p>The history behind this request being so important was because the game&#8217;s achievements and high scores were all saved in a local database residing in a protected part of the Android Operating System in <code>/data/data/com.farsight.AndroidPinball.javaproject/files/saved_data</code>. This directory could only be accessed by the user if they had unlocked the devices' bootloader and installed a superuser binary (also known as "rooting").</p>
+</div>
+<div class="paragraph">
+<p>Because some device manufacturers classed rooting a device as a warranty breach, users were not inclined to do this just so they could back up their game achievements and data.</p>
+</div>
+<div class="paragraph">
+<p>While GPS is fantastic, there are a few gotchas in how FarSight has implemented the feature: gotchas that will cause data loss if you are not aware of them.</p>
+</div>
+<div class="sect3">
+<h4 id="grouped_achievements_in_gps">4.5.1. Grouped Achievements in GPS</h4>
+<div class="paragraph">
+<p>Achievements are grouped together in GPS because of a limitation in the number of achievements a game can support. This means that for each group of five Standard and Wizard goals, there is one achievement for each category.</p>
+</div>
+<div class="paragraph">
+<p>To qualify for the GPS achievement, all goals must be achieved before the GPS Achievement is awarded.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how_tpa_detects_goals">4.5.2. How TPA Detects Goals</h4>
+<div class="paragraph">
+<p>Remember that local database? It is still being used to service the GPS achievements and leaderboard tracking. When the game hooks tell the database that an achievement has been achieved, it adds a flag to the database. When all flags for the Standard achievement group are set, the game triggers GPS to award the associated Achievement.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="understanding_saved_games_in_tpa">4.5.3. Understanding Saved Games in TPA</h4>
+<div class="paragraph">
+<p>Like most users who use games with GPS implemented, Cloud Save is something that happens automatically. The assumption is that if a game has Cloud Save in the app listing, a user is guaranteed that the app is backing up their scores and achievements to the cloud automatically.</p>
+</div>
+<div class="paragraph">
+<p>And if they want to play the game on another device, or restore to a new device, the achievements earned to date are restored automatically for them.</p>
+</div>
+<div class="paragraph">
+<p>This is <strong>not</strong> how it works in TPA.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example_online_progress_vs_local_progress">4.5.4. Example: Online Progress vs Local Progress</h4>
+<div class="paragraph">
+<p>If you have earned the GPS "Skilled" or "Wizard" goals online, failing to restore a current Saved Games profile to your device will mean that these goals are not reflected locally.</p>
+</div>
+<div class="paragraph">
+<p>Consider the following scenario:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You have one goal remaining in the "Wizard" GPS achievement for a table (4 out of 5 goals complete),</p>
+</li>
+<li>
+<p>You un-install TPA.</p>
+</li>
+<li>
+<p>You have no Saved Game restore point.</p>
+</li>
+<li>
+<p>You installed TPA fresh again.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In this scenario, you would have to start your Wizard Goals again for that table because the local database has no record of the other four goals being achieved. GPS does. TPA does not.</p>
+</div>
+<div class="paragraph">
+<p>Layering GPS over the <code>saved_games</code> local database is surely the single point of failure for user issues relating to lost data.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Launch_Button">5. Moving the Launch Button</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The launch button on tables such as Star Trek: The Next Generation (ST: TNG) and Attack From Mars (AFM) is positioned by default directly under the in-game Pause menu. This is impractical for most users playing TPA using the touchscreen.</p>
@@ -588,7 +780,7 @@ Tap to select from two options:</p>
 <p>This UI issue was brought to light outside of the PAF ecosystm in Episode 48 of <em>The Pinball Podcast</em>. The hosts tried to work out why the button was where it was and were totally unaware how to change it based on the information presented to them through the in-game pause menu on Android.</p>
 </div>
 <div class="sect2">
-<h3 id="how_do_i_move_the_launch_button_position_in_pinball_arcade">4.1. How Do I Move the Launch Button Position in Pinball Arcade?</h3>
+<h3 id="how_do_i_move_the_launch_button_position_in_pinball_arcade">5.1. How Do I Move the Launch Button Position in Pinball Arcade?</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -647,7 +839,7 @@ The launch button has priority over all flipper touch zones and tilt touch zones
 </div>
 </div>
 <div class="sect2">
-<h3 id="touch_tilting_and_button_position">4.2. Touch Tilting and Button Position</h3>
+<h3 id="touch_tilting_and_button_position">5.2. Touch Tilting and Button Position</h3>
 <div class="paragraph">
 <p>Touch Tilting also has its own set of positions, so if you use touch tilting (rather than accelerometer tilting) you need to take into account button position for both tilt and flip zones.</p>
 </div>
@@ -655,13 +847,13 @@ The launch button has priority over all flipper touch zones and tilt touch zones
 </div>
 </div>
 <div class="sect1">
-<h2 id="Controller_Settings">5. Controller Configuration</h2>
+<h2 id="Controller_Settings">6. Controller Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This content was originally rolled up into a thread in <a href="http://pinballarcadefans.com/showthread.php/6662-Explained-Controller-Support-Options-for-Android">this thread</a> on the Pinball Arcade Fans forum. The thread rolls-up conversation fragments in <a href="http://pinballarcadefans.com/showthread.php/566-Controller-support-for-Android">this thread</a>, to make it easier for folks to work out what controllers work with The Pinball Arcade (TPA) on Android.</p>
 </div>
 <div class="sect2">
-<h3 id="supported_controllers">5.1. Supported Controllers</h3>
+<h3 id="supported_controllers">6.1. Supported Controllers</h3>
 <div class="paragraph">
 <p>The current set of controllers known to work with TPA Android are:</p>
 </div>
@@ -689,7 +881,7 @@ The launch button has priority over all flipper touch zones and tilt touch zones
 </div>
 </div>
 <div class="sect2">
-<h3 id="abbreviations_used_in_this_section">5.2. Abbreviations Used in this Section</h3>
+<h3 id="abbreviations_used_in_this_section">6.2. Abbreviations Used in this Section</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">LS</dt>
@@ -720,7 +912,7 @@ The launch button has priority over all flipper touch zones and tilt touch zones
 </div>
 </div>
 <div class="sect2">
-<h3 id="moga_pocket">5.3. Moga Pocket</h3>
+<h3 id="moga_pocket">6.3. Moga Pocket</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Left Flipper</dt>
@@ -767,7 +959,7 @@ On Black Knight both Magnasave magnets are activated when lit when the controlle
 </div>
 </div>
 <div class="sect2">
-<h3 id="moga_pro_playstation_3_shield_portable_shield_tablet">5.4. Moga Pro / Playstation 3 / Shield Portable / Shield Tablet</h3>
+<h3 id="moga_pro_playstation_3_shield_portable_shield_tablet">6.4. Moga Pro / Playstation 3 / Shield Portable / Shield Tablet</h3>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Left Flipper</dt>
@@ -815,198 +1007,6 @@ On Black Knight both Magnasave magnets are activated when lit when the controlle
 <p>Flipper Buttons, and Launch (or A).</p>
 </dd>
 </dl>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Google_Play_Services">6. Google Play Services</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Coinciding with the Season 4 release of Earthshaker, a <a href="http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games">long-standing request</a> was implemented: Google Play Services (GPS) support.</p>
-</div>
-<div class="paragraph">
-<p>For the purposes of brevity, the way you use this feature is described first, with some background info presented after the main procedures. It&#8217;s worth reading on past the procedures if you are interested in the "why" this feature appears to be implemented the way it is.</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-If you do not create a Saved Games restore point manually, <strong>all</strong> local achievements (Standard/Wizard Goals, Local High Scores, and Hall of Fame (HOF) points) are lost if you remove TPA, or suffer a casastrophic device failure.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="how_do_i_create_a_saved_game_profile_in_pinball_arcade">6.1. How Do I Create a Saved Game Profile in Pinball Arcade?</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Tap the <code>Google Play</code> button on the main screen.</p>
-</li>
-<li>
-<p>Tap <code>Save/Load</code></p>
-</li>
-<li>
-<p>Tap <code>Save New Game</code></p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>You now have one restore point that you can use to revert to if something catastrophic happens.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="how_do_i_delete_a_saved_game_profile_in_pinball_arcade">6.2. How Do I Delete a Saved Game Profile in Pinball Arcade?</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Tap the <code>Google Play</code> button on the main screen.</p>
-</li>
-<li>
-<p>Tap <code>Save/Load</code></p>
-</li>
-<li>
-<p>Tap <code>Action Overflow</code> (three vertical docs) to access the delete function. +</p>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Touching anywhere other than this will <strong>load</strong> the profile immediately, potentially causing local progress data loss by loading an older save point over the new data.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Tap <code>Delete Saved Game</code> to delete the record.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Thanks to <em>Xanija</em> for this data-preserving tip.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="maintaining_your_local_game_progress">6.3. Maintaining Your Local Game Progress</h3>
-<div class="paragraph">
-<p>You need to keep manually creating backups using Saved Games in case you need to restore. Depending on how much you play TPA will determine how often you create a backup.</p>
-</div>
-<div class="paragraph">
-<p>As a general guideline:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Back up after you achieve a Goal or a High Score in TPA.</p>
-</li>
-<li>
-<p>Back up no less than weekly if you are a regular TPA player.</p>
-</li>
-<li>
-<p>Back up no less than monthly if you are a casual player.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>There is no way to schedule a Saved Games backup in the game, so you will need to rely on other systems to remind you. I use the DLC cycle as my memory jogger to create a new Saved Game restore point. It&#8217;s a workaround until a better way of managing this important data-retention activity is implemented.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saved_games_hard_limit">6.4. Saved Games Hard Limit</h3>
-<div class="paragraph">
-<p>FarSight have opted for a hard limit of three saved game points for each game. If you play regularly, you will quickly use those slots up and must delete some older saved games to maintain a current save profile.</p>
-</div>
-<div class="paragraph">
-<p>TPA Android users have confirmed that other games with this feature have more than three slots available, and clearly-defined <code>Save</code> and <code>Load</code> buttons on the Saved Game tile itself. This is an area of improvement FarSight can fix now, to improve the customer experience.</p>
-</div>
-<div class="paragraph">
-<p>There is a gotcha in the way you delete the Saved Game files with the current GPS  Saved Games UI</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="history_of_this_request">6.5. History of This Request</h3>
-<div class="paragraph">
-<p>The history behind this request being so important was because the game&#8217;s achievements and high scores were all saved in a local database residing in a protected part of the Android Operating System in <code>/data/data/com.farsight.AndroidPinball.javaproject/files/saved_data</code>. This directory could only be accessed by the user if they had unlocked the devices' bootloader and installed a superuser binary (also known as "rooting").</p>
-</div>
-<div class="paragraph">
-<p>Because some device manufacturers classed rooting a device as a warranty breach, users were not inclined to do this just so they could back up their game achievements and data.</p>
-</div>
-<div class="paragraph">
-<p>While GPS is fantastic, there are a few gotchas in how FarSight has implemented the feature: gotchas that will cause data loss if you are not aware of them.</p>
-</div>
-<div class="sect3">
-<h4 id="grouped_achievements_in_gps">6.5.1. Grouped Achievements in GPS</h4>
-<div class="paragraph">
-<p>Achievements are grouped together in GPS because of a limitation in the number of achievements a game can support. This means that for each group of five Standard and Wizard goals, there is one achievement for each category.</p>
-</div>
-<div class="paragraph">
-<p>To qualify for the GPS achievement, all goals must be achieved before the GPS Achievement is awarded.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="how_tpa_detects_goals">6.5.2. How TPA Detects Goals</h4>
-<div class="paragraph">
-<p>Remember that local database? It is still being used to service the GPS achievements and leaderboard tracking. When the game hooks tell the database that an achievement has been achieved, it adds a flag to the database. When all flags for the Standard achievement group are set, the game triggers GPS to award the associated Achievement.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="understanding_saved_games_in_tpa">6.5.3. Understanding Saved Games in TPA</h4>
-<div class="paragraph">
-<p>Like most users who use games with GPS implemented, Cloud Save is something that happens automatically. The assumption is that if a game has Cloud Save in the app listing, a user is guaranteed that the app is backing up their scores and achievements to the cloud automatically.</p>
-</div>
-<div class="paragraph">
-<p>And if they want to play the game on another device, or restore to a new device, the achievements earned to date are restored automatically for them.</p>
-</div>
-<div class="paragraph">
-<p>This is <strong>not</strong> how it works in TPA.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="example_online_progress_vs_local_progress">6.5.4. Example: Online Progress vs Local Progress</h4>
-<div class="paragraph">
-<p>If you have earned the GPS "Skilled" or "Wizard" goals online, failing to restore a current Saved Games profile to your device will mean that these goals are not reflected locally.</p>
-</div>
-<div class="paragraph">
-<p>Consider the following scenario:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>You have one goal remaining in the "Wizard" GPS achievement for a table (4 out of 5 goals complete),</p>
-</li>
-<li>
-<p>You un-install TPA.</p>
-</li>
-<li>
-<p>You have no Saved Game restore point.</p>
-</li>
-<li>
-<p>You installed TPA fresh again.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In this scenario, you would have to start your Wizard Goals again for that table because the local database has no record of the other four goals being achieved. GPS does. TPA does not.</p>
-</div>
-<div class="paragraph">
-<p>Layering GPS over the <code>saved_games</code> local database is surely the single point of failure for user issues relating to lost data.</p>
-</div>
 </div>
 </div>
 </div>
@@ -1077,8 +1077,8 @@ Thanks to <em>Xanija</em> for this data-preserving tip.
 <footer>
     <div id="footer" class="columns bottom-bar">
         <div class="paragraph">
-            <p>Version 1.1<br/>
-            Last Updated 2015-03-08</p>
+            <p>Version 1.2<br/>
+            Last Updated 2015-04-28</p>
         </div>
     </div>
 </footer>
