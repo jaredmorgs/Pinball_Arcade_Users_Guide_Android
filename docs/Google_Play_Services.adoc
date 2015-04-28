@@ -2,47 +2,11 @@
 == Google Play Services
 Coinciding with the Season 4 release of Earthshaker, a http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games[long-standing request] was implemented: Google Play Services (GPS) support.
 
-The history behind this request being so important was because the game's achievements and high scores were all saved in a local database residing in a protected part of the Android Operating System in `/data/data/com.farsight.AndroidPinball.javaproject/files/saved_data`. This directory could only be accessed by the user if they had unlocked the devices' bootloader and installed a superuser binary (also known as "rooting").
+For the purposes of brevity, the way you use this feature is described first, with some interesting background info presented after the main procedures. It's worth reading on past the procedures if you are interested in the "why" this feature appears to be implemented the way it is.
 
-Because some device manufacturers classed rooting a device as a warranty breach, users were not inclined to do this just so they could back up their game achievements and data.
+WARNING: If you do not create a Saved Games restore point manually, *all* local achievements (Standard/Wizard Goals, Local High Scores, and Hall of Fame (HOF) points) are lost if you remove TPA, or suffer a casastrophic device failure.
 
-While GPS is fantastic, there are a few gotchas in how FarSight has implemented the feature: gotchas that will cause data loss if you are not aware of them.
-
-=== Achievements in GPS
-Achievements are grouped together in GPS because of a limitation in the number of achievements a game can support. This means that for each group of five Standard and Wizard goals, there is one achievement for each category.
-
-To qualify for the GPS achievement, all goals must be achieved before the GPS Achievement is awarded.
-
-==== Implementation
-Remember that local database? Yep, it is still being used to service the GPS achievements and leaderboard tracking. When the game hooks tell the database that an achievement has been achieved, it adds a flag to the database. When all flags for the Standard achievement group are set, the game triggers GPS to award the associated Achievement.
-
-This continued use of the `saved_games` local database is in my opinion the single point of failure for user issues relating to lost data, as you'll discover later in this section.
-
-=== Understanding Saved Games in TPA
-IMPORTANT: If you do not create a Saved Games restore point manually, *all* local achievements (Standard/Wizard Goals, or Local High Scores) will be lost  if you un-install or re-install TPA on the same--or other--device.
-
-Like most users who use games with GPS implemented, Cloud Save is something that happens automatically. The assumption is that if a game has Cloud Save in the app listing, a user is guaranteed that the app is backing up their scores and achievements to the cloud automatically.
-
-And if they want to play the game on another device, or restore to a new device, the achievements earned to date are restored automatically for them.
-
-This is *not* how it works in TPA.
-
-=== Using Saved Games To Maintain Local Achievements and High Scores
-
-Even if you have earned the GPS "Skilled" or "Wizard" goals online, failing to restore a current Saved Games profile to your device will mean that these goals are not reflected locally.
-
-Consider the following scenario:
-
-* Have one goal remaining in the "Wizard" GPS achievement for a table (4 out of 5 goals complete),
-* Un-install TPA.
-* Have no Saved Game restore point.
-* Installed TPA again.
-
-In this scenario, you would have to start your Wizard Goals again for that table because the local database has no record of the other four goals being achieved. GPS does. TPA does not.
-
-==== How to Create a Saved Games Restore Point
-
-.How to Create a Saved Games Restore Point
+=== How Do I Create a Saved Game Profile in Pinball Arcade 
 
 . Tap the `Google Play` button on the main screen.
 . Tap `Save/Load`
@@ -50,7 +14,8 @@ In this scenario, you would have to start your Wizard Goals again for that table
 
 You now have one restore point that you can use to revert to if something catastrophic happens.
 
-==== Maintaining Your Local Game Progress
+=== Maintaining Your Local Game Progress
+
 You need to keep manually creating backups using Saved Games in case you need to restore. Depending on how much you play TPA will determine how often you create a backup.
 
 As a general guideline:
@@ -61,13 +26,16 @@ As a general guideline:
 
 There is no way to schedule a Saved Games backup in the game, so you will need to rely on other systems to remind you. I use the DLC cycle as my memory jogger to create a new Saved Game restore point. It's a workaround until a better way of managing this important data-retention activity is implemented.
 
-===== Deleting Saved Games 
+=== Saved Games Hard Limit 
 
 FarSight have opted for a hard limit of three saved game points for each game. If you play regularly, you will quickly use those slots up and must delete some older saved games to maintain a current save profile.
 
+TPA Android users have confirmed that other games with this feature have more than three slots available, and clearly-defined `Save` and `Load` buttons on the Saved Game tile itself. This is an area of improvement FarSight can fix now, to improve the customer experience.
+
 There is a gotcha in the way you delete the Saved Game files with the current GPS  Saved Games UI 
 
-.How To Delete a Saved Game in Pinball Arcade
+=== How Do I Delete a Saved Game in Pinball Arcade
+
 . Tap the `Google Play` button on the main screen.
 . Tap `Save/Load`
 . Tap `Action Overflow` (three vertical docs) to access the delete function. +
@@ -76,7 +44,43 @@ WARNING: Touching anywhere other than this will *load* the profile immediately, 
 +
 . Tap `Delete Saved Game` to delete the record.
 
-TPA Android users have confirmed that other games with this feature have more than three slots available, and clearly-defined `Save` and `Load` buttons on the Saved Game tile itself. This is an area of improvement FarSight can fix now, to improve the customer experience.
+NOTE: Thanks to _Xanija_ for this data-preserving tip.
 
-Thanks to _Xanija_ for this data-preserving tip.
+=== History of This Request
 
+The history behind this request being so important was because the game's achievements and high scores were all saved in a local database residing in a protected part of the Android Operating System in `/data/data/com.farsight.AndroidPinball.javaproject/files/saved_data`. This directory could only be accessed by the user if they had unlocked the devices' bootloader and installed a superuser binary (also known as "rooting").
+
+Because some device manufacturers classed rooting a device as a warranty breach, users were not inclined to do this just so they could back up their game achievements and data.
+
+While GPS is fantastic, there are a few gotchas in how FarSight has implemented the feature: gotchas that will cause data loss if you are not aware of them.
+
+==== Grouped Achievements in GPS
+Achievements are grouped together in GPS because of a limitation in the number of achievements a game can support. This means that for each group of five Standard and Wizard goals, there is one achievement for each category.
+
+To qualify for the GPS achievement, all goals must be achieved before the GPS Achievement is awarded.
+
+==== How TPA Detects Goals
+Remember that local database? It is still being used to service the GPS achievements and leaderboard tracking. When the game hooks tell the database that an achievement has been achieved, it adds a flag to the database. When all flags for the Standard achievement group are set, the game triggers GPS to award the associated Achievement.
+
+==== Understanding Saved Games in TPA
+
+Like most users who use games with GPS implemented, Cloud Save is something that happens automatically. The assumption is that if a game has Cloud Save in the app listing, a user is guaranteed that the app is backing up their scores and achievements to the cloud automatically.
+
+And if they want to play the game on another device, or restore to a new device, the achievements earned to date are restored automatically for them.
+
+This is *not* how it works in TPA.
+
+==== Example: Online Progress vs Local Progress
+
+If you have earned the GPS "Skilled" or "Wizard" goals online, failing to restore a current Saved Games profile to your device will mean that these goals are not reflected locally.
+
+Consider the following scenario:
+
+* You have one goal remaining in the "Wizard" GPS achievement for a table (4 out of 5 goals complete),
+* You un-install TPA.
+* You have no Saved Game restore point.
+* You installed TPA fresh again.
+
+In this scenario, you would have to start your Wizard Goals again for that table because the local database has no record of the other four goals being achieved. GPS does. TPA does not.
+
+Layering GPS over the `saved_games` local database is surely the single point of failure for user issues relating to lost data.
