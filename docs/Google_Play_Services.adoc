@@ -27,8 +27,6 @@ And if they want to play the game on another device, or restore to a new device,
 
 This is *not* how it works in TPA.
 
-Until this user guide existed, there was no documentation about how Saved Games worked for the general user of TPA. For those folks not pouring over Pinball Arcade Fans Forums to learn how to use the app, users had no idea they had to create a manual restore point using Saved Games.
-
 === Using Saved Games To Maintain Local Achievements and High Scores
 
 Even if you have earned the GPS "Skilled" or "Wizard" goals online, failing to restore a current Saved Games profile to your device will mean that these goals are not reflected locally.
