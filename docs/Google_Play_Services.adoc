@@ -2,17 +2,29 @@
 == Google Play Services
 Coinciding with the Season 4 release of Earthshaker, a http://pinballarcadefans.com/showthread.php/7293-Implement-Google-Play-Games-Cloud-Save?highlight=google+play+games[long-standing request] was implemented: Google Play Services (GPS) support.
 
-For the purposes of brevity, the way you use this feature is described first, with some interesting background info presented after the main procedures. It's worth reading on past the procedures if you are interested in the "why" this feature appears to be implemented the way it is.
+For the purposes of brevity, the way you use this feature is described first, with some background info presented after the main procedures. It's worth reading on past the procedures if you are interested in the "why" this feature appears to be implemented the way it is.
 
 WARNING: If you do not create a Saved Games restore point manually, *all* local achievements (Standard/Wizard Goals, Local High Scores, and Hall of Fame (HOF) points) are lost if you remove TPA, or suffer a casastrophic device failure.
 
-=== How Do I Create a Saved Game Profile in Pinball Arcade 
+=== How Do I Create a Saved Game Profile in Pinball Arcade? 
 
 . Tap the `Google Play` button on the main screen.
 . Tap `Save/Load`
 . Tap `Save New Game`
 
 You now have one restore point that you can use to revert to if something catastrophic happens.
+
+=== How Do I Delete a Saved Game Profile in Pinball Arcade?
+
+. Tap the `Google Play` button on the main screen.
+. Tap `Save/Load`
+. Tap `Action Overflow` (three vertical docs) to access the delete function. +
++
+WARNING: Touching anywhere other than this will *load* the profile immediately, potentially causing local progress data loss by loading an older save point over the new data.
++
+. Tap `Delete Saved Game` to delete the record.
+
+NOTE: Thanks to _Xanija_ for this data-preserving tip.
 
 === Maintaining Your Local Game Progress
 
@@ -34,18 +46,6 @@ TPA Android users have confirmed that other games with this feature have more th
 
 There is a gotcha in the way you delete the Saved Game files with the current GPS  Saved Games UI 
 
-=== How Do I Delete a Saved Game in Pinball Arcade
-
-. Tap the `Google Play` button on the main screen.
-. Tap `Save/Load`
-. Tap `Action Overflow` (three vertical docs) to access the delete function. +
-+
-WARNING: Touching anywhere other than this will *load* the profile immediately, potentially causing local progress data loss by loading an older save point over the new data.
-+
-. Tap `Delete Saved Game` to delete the record.
-
-NOTE: Thanks to _Xanija_ for this data-preserving tip.
-
 === History of This Request
 
 The history behind this request being so important was because the game's achievements and high scores were all saved in a local database residing in a protected part of the Android Operating System in `/data/data/com.farsight.AndroidPinball.javaproject/files/saved_data`. This directory could only be accessed by the user if they had unlocked the devices' bootloader and installed a superuser binary (also known as "rooting").
@@ -55,11 +55,13 @@ Because some device manufacturers classed rooting a device as a warranty breach,
 While GPS is fantastic, there are a few gotchas in how FarSight has implemented the feature: gotchas that will cause data loss if you are not aware of them.
 
 ==== Grouped Achievements in GPS
+
 Achievements are grouped together in GPS because of a limitation in the number of achievements a game can support. This means that for each group of five Standard and Wizard goals, there is one achievement for each category.
 
 To qualify for the GPS achievement, all goals must be achieved before the GPS Achievement is awarded.
 
 ==== How TPA Detects Goals
+
 Remember that local database? It is still being used to service the GPS achievements and leaderboard tracking. When the game hooks tell the database that an achievement has been achieved, it adds a flag to the database. When all flags for the Standard achievement group are set, the game triggers GPS to award the associated Achievement.
 
 ==== Understanding Saved Games in TPA
