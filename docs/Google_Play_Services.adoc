@@ -65,10 +65,11 @@ There is no way to schedule a Saved Games backup in the game, so you will need t
 
 ===== Deleting Saved Games 
 
-Through no fault of FarSight's, GPS has a hard limit of three saved game points for each game. If you play regularly, you will quickly use those slots up and must delete some older saved games to maintain a current save profile.
+FarSight have opted for a hard limit of three saved game points for each game. If you play regularly, you will quickly use those slots up and must delete some older saved games to maintain a current save profile.
 
-There is a gotcha in the way you delete the Saved Game files, which is down to a Google UX issue, and not a FarSight UX issue.
+There is a gotcha in the way you delete the Saved Game files with the current GPS  Saved Games UI 
 
+.How To Delete a Saved Game in Pinball Arcade
 . Tap the `Google Play` button on the main screen.
 . Tap `Save/Load`
 . Tap `Action Overflow` (three vertical docs) to access the delete function. +
@@ -77,7 +78,7 @@ WARNING: Touching anywhere other than this will *load* the profile immediately, 
 +
 . Tap `Delete Saved Game` to delete the record.
 
-It would be better if Google had clearly-defined Save and Load buttons on each Saved Game card, but they don't. Hopefully now you won't get caught out. 
+TPA Android users have confirmed that other games with this feature have more than three slots available, and clearly-defined `Save` and `Load` buttons on the Saved Game tile itself. This is an area of improvement FarSight can fix now, to improve the customer experience.
 
 Thanks to _Xanija_ for this data-preserving tip.
 
