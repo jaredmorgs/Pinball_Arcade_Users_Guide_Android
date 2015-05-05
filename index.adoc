@@ -9,14 +9,24 @@ documentationExpanded: false
 postsExpanded: false
 ---
 
-:toc:
 :imagesdir: images
 :homepage: http://jaredmorgs.github.io/Pinball_Arcade_Users_Guide_Android
-:numbered:
+:sectnums:
+:setlinks:
+:toc: macro
+
+toc::[]
+
 include::/docs/Introduction.adoc[]
+
 include::/docs/Settings_Menu.adoc[]
+
 include::/docs/Table_Menu.adoc[]
+
 include::/docs/Google_Play_Services.adoc[]
+
 include::/docs/Launch_Button.adoc[]
+
 include::/docs/Controller_Settings.adoc[]
+
 include::/docs/Android_Sound_Delay.adoc[]
