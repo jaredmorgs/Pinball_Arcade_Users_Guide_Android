@@ -15,7 +15,7 @@ postsExpanded: false
 :setlinks:
 :toc: macro
 
-toc::[]
+toc::[] 
 
 include::/docs/Introduction.adoc[]
 
