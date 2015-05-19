@@ -1,11 +1,11 @@
 [[Settings_Menu]]
 == The Settings Menu Explained
 
-User Interface limitations caused the Settings menu to evolve from a pretty terse list of items, to what is is now. 
+User Interface limitations caused the Settings menu to evolve from a pretty terse list of items, to what is is now.
 
-There are some options that use Developer speak and would be meaningless to many users, yet are very important for configuring optimum performance in Android for older devices. 
+There are some options that use Developer speak and would be meaningless to many users, yet are very important for configuring optimum performance in Android for older devices.
 
-Some Graphics menu items do not display depending on your device kernel flags and OpenGL capabilities (say what, now). 
+Some Graphics menu items do not display depending on your device kernel flags and OpenGL capabilities (say what, now).
 
 The menu items that make a difference to playing and enjoying TPA are:
 
@@ -14,31 +14,32 @@ The menu items that make a difference to playing and enjoying TPA are:
 * Mip Mapping
 * Detail
 * Textures
+* Restore HoF Pts
 
 === Manage Tables
 
 This menu is pretty self-explanatory. It lets you do the following:
 
-IMPORTANT: `Update All` and `Download Owned` do not run as background processes. You must have TPA open all the time for this process to complete successfully. 
+IMPORTANT: `Update All` and `Download Owned` do not run as background processes. You must have TPA open all the time for this process to complete successfully.
 
 Update All::
-Update all _downloaded_ tables present on the device that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources'). 
-Download Owned:: 
-Bulk download all owned tables _missing from the app_, that are linked to your Google Play account used to purchase TPA Table Packs or Season Passes. 
+Update all _downloaded_ tables present on the device that have received RES updates (a term used to indicate a table has received improvements to graphics assets, known as 'resources').
+Download Owned::
+Bulk download all owned tables _missing from the app_, that are linked to your Google Play account used to purchase TPA Table Packs or Season Passes.
 Delete::
 By tapping the button to the left of each table in the list, you can delete individual table files.
 
-NOTE: The table order in this list is well and truly out of alphabetical order. It is sorted based on the date the table packs were released. That's why you see all the older tables from Season 1 and Season 2 appearing first. 
+NOTE: The table order in this list is well and truly out of alphabetical order. It is sorted based on the date the table packs were released. That's why you see all the older tables from Season 1 and Season 2 appearing first.
 
-If you are starting from a new device, and you wanted to download and update all owned tables, you would select `Download Owned`. This will download all tables you own _in the order they were released_, starting at Season 1. 
+If you are starting from a new device, and you wanted to download and update all owned tables, you would select `Download Owned`. This will download all tables you own _in the order they were released_, starting at Season 1.
 
-If you already had all the tables on your device, and received an app update through Google Play, you would select `Update All` to pull down any updates table files. 
+If you already had all the tables on your device, and received an app update through Google Play, you would select `Update All` to pull down any updates table files.
 
 ==== Managing Tables Outside the Interface
 
 There is another way to manage tables that allows you to do away with the somewhat awkward menu in TPA. All you need is your favourite Android file browser.
 
-The game Downloadable Content (DLC) is stored in the `/sdcard/Android/data/com.farsight.AndroidPinball.javaProject/files/` folder. 
+The game Downloadable Content (DLC) is stored in the `/sdcard/Android/data/com.farsight.AndroidPinball.javaProject/files/` folder.
 
 It is arguably easier to navigate to this directory and delete files manually. The method through the UI works, but is slow. Only use it if you are not comfortable deleting files through the file system.
 
@@ -50,20 +51,20 @@ And use the new table release each month as a reminder to take a DLC back-up. Yo
 
 === Sound
 
-There's not a great deal to this menu: On or Off. 
+There's not a great deal to this menu: On or Off.
 
 Note that this turns off *all* sound effects and music. There are no subtle settings to affect mechanical sounds, music, or sound effects. This is most likely to do with limitations of the Farsight Audio Mixer, described later in this guide.
 
 === Mip Mapping
 
-This menu screams "Developer Speak" in an app specifically not targeted at Developers. Another issue is the menu item has been misnamed: it should be _Anisotropic Filtering_. But try fitting that word into the current UI and you'll soon understand why Mip Mapping was chosen. 
+This menu screams "Developer Speak" in an app specifically not targeted at Developers. Another issue is the menu item has been misnamed: it should be _Anisotropic Filtering_. But try fitting that word into the current UI and you'll soon understand why Mip Mapping was chosen.
 
 You'll need to visit http://en.m.wikipedia.org/wiki/Mipmap[Wikipedia] for a concise description, but what this setting does is affect performance on devices in the area of "depth of field" and the sharpness of the depth of field.
 
 You would think that turning this setting on would be a good thing. But, you need to turn your thinking around when understanding how this works in TPA.
 
 On::
-Activates the Mip Mapping function, which serves multiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This is better for devices with limited GPU capabilities.  
+Activates the Mip Mapping function, which serves multiple mipmap images and lets the GPU pick the best sample resolution for your specific device hardware. This is better for devices with limited GPU capabilities.
 Off::
 Deactivates the Mip Mapping function, which serves the highest resolution mipmap. This requires more GPU processing power, and as you can expect, this may add a performance impact for older devices.
 
@@ -95,6 +96,19 @@ High::
 The highest polygon count possible in the table models used in TPA. This is the default for this menu now.
 Normal::
 Hexagonal shaped round targets, and other trade-offs that make some playfield elements appear jaggy at distance, and blocky when zoomed in upon.
+
+=== Restore HoF Pts
+
+NOTE: This feature is available in conjunction with the Xenon table release.
+
+If you have a mismatch between what you believe your Hall of Fame (HoF) points should be, and what is recorded in the app, you can trigger a manual rebuild of your HoF points. This makes the app access the online leaderboard scores, recalculate the HoF points from this data, then restore this data to your device.
+
+.To start rebuilding your HoF points
+. Tap Settings -> Restore HoF Pts.
+. When prompted, select `Yes`.
+. Wait while the restore function runs.
+  NOTE: It may take a few minutes depending on your internet connection.
+. Tap `OK` to complete the process.
 
 == Other Settings Menu Items
 
