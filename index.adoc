@@ -1,6 +1,5 @@
 ---
 layout: default 
-title: Users Guide for The Pinball Arcade on Android
 author: Jared Morgan (jaredmorgs)
 email: jaredleonmorgan@gmail.com
 version: 1.2
@@ -8,7 +7,7 @@ updated: 2015-04-28
 documentationExpanded: false
 postsExpanded: false
 ---
-
+= Users Guide for The Pinball Arcade on Android
 :imagesdir: images
 :homepage: http://jaredmorgs.github.io/Pinball_Arcade_Users_Guide_Android
 :sectnums:
@@ -17,16 +16,16 @@ postsExpanded: false
 
 toc::[] 
 
-include::/docs/Introduction.adoc[]
+include::docs/Introduction.adoc[]
 
-include::/docs/Settings_Menu.adoc[]
+include::docs/Settings_Menu.adoc[]
 
-include::/docs/Table_Menu.adoc[]
+include::docs/Table_Menu.adoc[]
 
-include::/docs/Google_Play_Services.adoc[]
+include::docs/Google_Play_Services.adoc[]
 
-include::/docs/Launch_Button.adoc[]
+include::docs/Launch_Button.adoc[]
 
-include::/docs/Controller_Settings.adoc[]
+include::docs/Controller_Settings.adoc[]
 
-include::/docs/Android_Sound_Delay.adoc[]
+include::docs/Android_Sound_Delay.adoc[]
