@@ -26,4 +26,8 @@ That, and I *really* love pinball! :D
 == How Do I Build The Book?
 This book is written in AsciiDoc and processed using the free and open source http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoctor toolchain]. 
 
-If you are building this file locally using asciidoctor, use `asciidoctor -a linkcss! index.adoc`
+If you are building this file locally using asciidoctor, use `asciidoctor -a linkcss! -a skip-front-matter index.adoc`.
+
+If you are building using http://asciidoctor.org/docs/convert-asciidoc-to-pdf/[asciidoctor-pdf] +gem+, use `asciidoctor-pdf -a skip-front-matter index.adoc`.
+
+Skip front matter ignores the mandatory Jekyll block which will cause the build to fail if you attempt to parse it.
