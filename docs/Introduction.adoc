@@ -3,7 +3,7 @@
 [quote, iconfinder.com]
 A User Interface is like a joke: if you have to explain it, it's not that good.
 
-This guide exists because of limitation in the User Interface (UI) currently implemented in FarSight Studios' _The Pinball Arcade_ (TPA) for Android. In its current form, the UI is limiting, it confuses customers, and offers an unsatisfactory User Experience (UX) for new and seasoned users alike.
+This guide exists because of limitations in the User Interface (UI) currently implemented in FarSight Studios' _The Pinball Arcade_ (TPA) for Android. In its current form, the UI is limiting, it confuses customers, and offers an unsatisfactory User Experience (UX) for new and seasoned users alike.
 
 The Pinball Arcade Fans community and I have been working around issues caused by the UI for close to two years now, and the number of cases I've personally encountered where customers are just plain confused about features is getting to the point where I have no choice but to take action.
 
