@@ -11,6 +11,7 @@ Jared Morgan
 :imagesdir: images 
 :homepage: http://jaredmorgs.github.io/Pinball_Arcade_Users_Guide_Android
 :sectnums:
+:linkcss!:
 :sectanchors:
 :toc: macro
 
