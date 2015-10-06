@@ -112,10 +112,12 @@
 <li><a href="#moga_pro_playstation_3_shield_portable_shield_tablet">7.4. Moga Pro / Playstation 3 / Shield Portable / Shield Tablet</a></li>
 </ul>
 </li>
-<li><a href="#Android_Sound_Delay">8. Why Android Sound Effects Always Lag Behind the Action</a>
+<li><a href="#Android_Sound_Delay">8. Known Issues about SFX and Music</a>
 <ul class="sectlevel2">
-<li><a href="#why_does_this_happen">8.1. Why Does This Happen?</a></li>
-<li><a href="#audio_questions_answered">8.2. Audio Questions Answered</a></li>
+<li><a href="#how_is_audio_emulated_in_the_game">8.1. How is Audio Emulated in the Game</a></li>
+<li><a href="#current_state_of_audio">8.2. Current State of Audio</a></li>
+<li><a href="#historical_record">8.3. Historical Record</a></li>
+<li><a href="#audio_questions_answered">8.4. Audio Questions Answered</a></li>
 </ul>
 </li>
 </ul>
@@ -1103,28 +1105,79 @@ On Black Knight both Magnasave magnets are activated when lit when the controlle
 </div>
 </div>
 <div class="sect1">
-<h2 id="Android_Sound_Delay"><a class="anchor" href="#Android_Sound_Delay"></a>8. Why Android Sound Effects Always Lag Behind the Action</h2>
+<h2 id="Android_Sound_Delay"><a class="anchor" href="#Android_Sound_Delay"></a>8. Known Issues about SFX and Music</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You might have noticed that mechanical effects in all Android tables seem to be running up to a quarter second behind the action on the table.</p>
+<p>Up until late in Season Four, mechanical effects in all Android tables were playing back up to a quarter second behind the action on the table.</p>
 </div>
 <div class="paragraph">
-<p>Additionally, when game soundtrack music loops, there is a noticeable playback gap in the music stream.</p>
+<p>Additionally, when game soundtrack music looped, there was a noticeable playback gap in the music stream.</p>
+</div>
+<div class="paragraph">
+<p>There are some long-standing issues with sound emulation on platforms. Some worse than others.</p>
 </div>
 <div class="sect2">
-<h3 id="why_does_this_happen"><a class="anchor" href="#why_does_this_happen"></a>8.1. Why Does This Happen?</h3>
+<h3 id="how_is_audio_emulated_in_the_game"><a class="anchor" href="#how_is_audio_emulated_in_the_game"></a>8.1. How is Audio Emulated in the Game</h3>
 <div class="paragraph">
-<p>Ryan Routon, the former Android developer for TPA, confirmed back in October 2013 in <a href="http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108893&amp;viewfull=1#post108893">this post</a> that TPA uses a custom made in-house audio mixer&#8212;&#8203;lets call it FarSight Audio Mixer (FAM)--that is a bit "laggy". It mixes everything into a single channel (yep, no Stereo on any table: even those that originally supported it), which is then sent as a stream to the Java side of the app to be submitted in chunks to the OS.</p>
+<p>The truth is, audio is not purely emulated from the game ROM.</p>
 </div>
 <div class="paragraph">
-<p>This lagginess was present well before October 2013 but the reasons causing the issue were not revealed until this date. Advances in device specifications since this date have not resulted in a performance boost to how the FAM operates.</p>
+<p>FarSight had to make a call back in 2012 regarding performance, and the ability to "hook into" the sound stream to detect goals based on audio calls.</p>
 </div>
 <div class="paragraph">
+<p>Mobile platforms of that era were not capable of natively emulating the audio from the game ROM, along with locking the Frames Per Second (FPS) at the required 60fps for correct physics.<br>
+Physics, and the way a table plays, is more important than purely emulating sound. Sound was given second-billing.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="current_state_of_audio"><a class="anchor" href="#current_state_of_audio"></a>8.2. Current State of Audio</h3>
+<div class="paragraph">
+<p>When Android allowed developers to increase the package file size to over 50MB, FarSight was able to change the way sound effects were managed.</p>
+</div>
+<div class="paragraph">
+<p>FarSight now includes all mechanical sound effects in the Android Sound Pool. Including sound assets in the Sound Pool allows Android to play back the sound directly, and not pass the sound file through the Android audio engine.</p>
+</div>
+<div class="paragraph">
+<p>FarSight still encodes audio for android at 11,000 Khz, which is low-quality mono. On other platforms, audio is encoded at 44,100 Khz, which is CD quality audio.</p>
+</div>
+<div class="paragraph">
+<p>When audio loops, there is still a noticeable pause. This is down to limitations of the audio system FarSight uses.</p>
+</div>
+<div class="paragraph">
+<p>As the platform progresses, FarSight will look at ways to boost the audio encoding rate to reduce sound artifacts like popping and crackling.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="historical_record"><a class="anchor" href="#historical_record"></a>8.3. Historical Record</h3>
+<div class="sect3">
+<h4 id="what_is_the_root_cause_of_latency"><a class="anchor" href="#what_is_the_root_cause_of_latency"></a>8.3.1. What is the Root Cause of Latency?</h4>
+<div class="paragraph">
+<p>The Farsight Audio Mixer (FAM), and issues with audio latency on Android are the basic causes for this issue.</p>
+</div>
+<div class="sect4">
+<h5 id="background"><a class="anchor" href="#background"></a>Background</h5>
+<div class="paragraph">
+<p>Ryan Routon, the former Android developer for TPA, confirmed back in October 2013 in <a href="http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108893&amp;viewfull=1#post108893">this post</a> that TPA uses a custom made in-house audio mixer&#8212;&#8203;lets call it FarSight Audio Mixer (FAM)--that has some latency issues. It mixes the game SFX and BGM into a single channel, which is then sent as a stream to the Java side of the app to be submitted in chunks to the OS.</p>
+</div>
+<div class="paragraph">
+<p>This latency was present well before October 2013 but the reasons causing the issue were not revealed until this date. Advances in device specifications since this date have not resulted in a performance boost to how the FAM operates.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="workarounds"><a class="anchor" href="#workarounds"></a>Workarounds</h5>
+<div class="paragraph">
+<div class="title">Farsight Audio Mixer</div>
 <p>Frustratingly, there is no workaround to this issue, unless the mixer is completely rewritten. Lets just say a complete rewrite of the FAM is <strong>highly unlikely</strong> because it is definitely a non-trivial task to re-engineer how the FAM operates across all platforms.</p>
 </div>
+<div class="paragraph">
+<div class="title">Android Audio Latency</div>
+<p>Since Android Kit Kat (4.4) was introduced, small improvements to how audio is passed-through have been made. The upcoming Android Marshmallow (6.x) is rumored to be including pro-audio functionality which would certainly improve the situation with gapless playback.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="audio_questions_answered"><a class="anchor" href="#audio_questions_answered"></a>8.2. Audio Questions Answered</h3>
+<h3 id="audio_questions_answered"><a class="anchor" href="#audio_questions_answered"></a>8.4. Audio Questions Answered</h3>
 <div class="paragraph">
 <p>All information provided by responses from Ryan Routon <a href="http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108944&amp;viewfull=1#post108944">here</a>.</p>
 </div>

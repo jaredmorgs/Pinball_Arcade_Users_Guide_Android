@@ -1,17 +1,55 @@
 [[Android_Sound_Delay]]
-== Why Android Sound Effects Always Lag Behind the Action
-You might have noticed that mechanical effects in all Android tables seem to be running up to a quarter second behind the action on the table.
+== Known Issues about SFX and Music
 
-Additionally, when game soundtrack music loops, there is a noticeable playback gap in the music stream.
+Up until late in Season Four, mechanical effects in all Android tables were playing back up to a quarter second behind the action on the table.
 
-=== Why Does This Happen?
-Ryan Routon, the former Android developer for TPA, confirmed back in October 2013 in http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108893&viewfull=1#post108893[this post] that TPA uses a custom made in-house audio mixer--lets call it FarSight Audio Mixer (FAM)--that is a bit "laggy". It mixes everything into a single channel (yep, no Stereo on any table: even those that originally supported it), which is then sent as a stream to the Java side of the app to be submitted in chunks to the OS.
+Additionally, when game soundtrack music looped, there was a noticeable playback gap in the music stream.
 
-This lagginess was present well before October 2013 but the reasons causing the issue were not revealed until this date. Advances in device specifications since this date have not resulted in a performance boost to how the FAM operates. 
+There are some long-standing issues with sound emulation on platforms. Some worse than others.
 
-Frustratingly, there is no workaround to this issue, unless the mixer is completely rewritten. Lets just say a complete rewrite of the FAM is *highly unlikely* because it is definitely a non-trivial task to re-engineer how the FAM operates across all platforms. 
+=== How is Audio Emulated in the Game
+
+The truth is, audio is not purely emulated from the game ROM.
+
+FarSight had to make a call back in 2012 regarding performance, and the ability to "hook into" the sound stream to detect goals based on audio calls.
+
+Mobile platforms of that era were not capable of natively emulating the audio from the game ROM, along with locking the Frames Per Second (FPS) at the required 60fps for correct physics.
+Physics, and the way a table plays, is more important than purely emulating sound. Sound was given second-billing.
+
+=== Current State of Audio
+
+When Android allowed developers to increase the package file size to over 50MB, FarSight was able to change the way sound effects were managed.
+
+FarSight now includes all mechanical sound effects in the Android Sound Pool. Including sound assets in the Sound Pool allows Android to play back the sound directly, and not pass the sound file through the Android audio engine.
+
+FarSight still encodes audio for android at 11,000 Khz, which is low-quality mono. On other platforms, audio is encoded at 44,100 Khz, which is CD quality audio.
+
+When audio loops, there is still a noticeable pause. This is down to limitations of the audio system FarSight uses.
+
+As the platform progresses, FarSight will look at ways to boost the audio encoding rate to reduce sound artifacts like popping and crackling.
+
+=== Historical Record
+
+==== What is the Root Cause of Latency?
+
+The Farsight Audio Mixer (FAM), and issues with audio latency on Android are the basic causes for this issue.
+
+===== Background
+
+Ryan Routon, the former Android developer for TPA, confirmed back in October 2013 in http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108893&viewfull=1#post108893[this post] that TPA uses a custom made in-house audio mixer--lets call it FarSight Audio Mixer (FAM)--that has some latency issues. It mixes the game SFX and BGM into a single channel, which is then sent as a stream to the Java side of the app to be submitted in chunks to the OS.
+
+This latency was present well before October 2013 but the reasons causing the issue were not revealed until this date. Advances in device specifications since this date have not resulted in a performance boost to how the FAM operates.
+
+===== Workarounds
+
+.Farsight Audio Mixer
+Frustratingly, there is no workaround to this issue, unless the mixer is completely rewritten. Lets just say a complete rewrite of the FAM is *highly unlikely* because it is definitely a non-trivial task to re-engineer how the FAM operates across all platforms.
+
+.Android Audio Latency
+Since Android Kit Kat (4.4) was introduced, small improvements to how audio is passed-through have been made. The upcoming Android Marshmallow (6.x) is rumored to be including pro-audio functionality which would certainly improve the situation with gapless playback.
 
 === Audio Questions Answered
+
 All information provided by responses from Ryan Routon http://pinballarcadefans.com/showthread.php/6182-Pack-19-Beta?p=108944&viewfull=1#post108944[here].
 
 [qanda]
