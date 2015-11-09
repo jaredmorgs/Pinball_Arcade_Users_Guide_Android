@@ -13,7 +13,8 @@ Jared Morgan
 :sectnums:
 :linkcss!:
 :sectanchors:
-:toc: macro
+:toc: macro 
+
 
 toc::[] 
 
